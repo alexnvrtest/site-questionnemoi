@@ -1,1 +1,211 @@
 
+:root {
+  --encre: #14213d;
+  --bleu: #1b3fa0;
+  --jaune: #f5c518;
+  --papier: #ffffff;
+  --gris: #40485c;
+  --trait: #dfe3ec;
+  --mesure: 34rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--gris);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.enveloppe {
+  max-width: var(--mesure);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: var(--bleu);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+h1,
+h2 {
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  color: var(--encre);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 7vw, 3.1rem);
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  margin: 3rem 0 0.75rem;
+}
+
+p {
+  margin: 0 0 1.15rem;
+  max-width: 68ch;
+}
+
+/* En-tête et marque */
+
+.entete {
+  padding: 2.5rem 0 0;
+}
+
+.marque {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  background: var(--jaune);
+  color: var(--encre);
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 700;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.marque span {
+  font-size: 1.15rem;
+}
+
+/* Accroche */
+
+.accroche {
+  padding: 2.25rem 0 0.5rem;
+}
+
+.accroche p {
+  font-size: 1.15rem;
+}
+
+/* Liste des fonctions */
+
+.fonctions {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.fonctions li {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--trait);
+}
+
+.fonctions li:last-child {
+  border-bottom: 1px solid var(--trait);
+}
+
+.fonctions strong {
+  color: var(--encre);
+  font-weight: 600;
+}
+
+/* Bloc éditeur */
+
+.editeur {
+  margin: 1.25rem 0 0;
+}
+
+.editeur div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--trait);
+}
+
+.editeur dt {
+  flex: 0 0 9.5rem;
+  color: var(--encre);
+  font-weight: 600;
+}
+
+.editeur dd {
+  margin: 0;
+  flex: 1 1 12rem;
+}
+
+/* Pied de page */
+
+.pied {
+  margin-top: 4rem;
+  padding: 2rem 0 3rem;
+  border-top: 3px solid var(--encre);
+  font-size: 0.95rem;
+}
+
+.pied ul {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.pied li {
+  margin-bottom: 0.6rem;
+}
+
+.pied a {
+  display: inline-block;
+  padding: 0.25rem 0;
+  min-height: 2.75rem;
+  line-height: 2.25rem;
+}
+
+.pied p {
+  margin: 0;
+  color: var(--gris);
+}
+
+/* Pages de texte juridique */
+
+.texte h2 {
+  margin-top: 2.5rem;
+}
+
+.texte ul {
+  max-width: 68ch;
+  padding-left: 1.2rem;
+}
+
+.texte li {
+  margin-bottom: 0.5rem;
+}
+
+.retour {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
