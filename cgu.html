@@ -1,108 +1,444 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conditions générales d'utilisation — Questionne Moi</title>
-<meta name="description" content="Conditions générales d'utilisation de l'application Questionne Moi.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#072D42">
+  <meta name="robots" content="index,follow">
+  <title>Conditions générales d’utilisation | Questionne Moi</title>
+  <meta name="description" content="Règles d'utilisation de l'application Questionne Moi, dont la clause sur les cours photographiés.">
+  <link rel="canonical" href="https://www.questionnemoi.com/cgu.html">
+  <link rel="icon" href="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Questionne Moi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Conditions générales d’utilisation | Questionne Moi">
+  <meta property="og:description" content="Règles d'utilisation de l'application Questionne Moi, dont la clause sur les cours photographiés.">
+  <meta property="og:url" content="https://www.questionnemoi.com/cgu.html">
+  <meta property="og:image" content="https://www.questionnemoi.com/assets/partage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+
+:root {
+  --ink: #072D42;
+  --blue: #0B4F71;
+  --blue-deep: #083D58;
+  --gold: #F0B429;
+  --paper: #EAF1F5;
+  --white: #FFFFFF;
+  --muted: #3E5968;
+  --line: #C8D7E0;
+  --content: 72rem;
+  --reading: 48rem;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: var(--blue);
+  text-underline-offset: .18em;
+  text-decoration-thickness: .08em;
+}
+
+a:hover { color: var(--blue-deep); }
+
+a:focus-visible {
+  outline: .1875rem solid var(--white);
+  outline-offset: .1875rem;
+  box-shadow: 0 0 0 .375rem var(--blue);
+  border-radius: .35rem;
+}
+
+.skip-link {
+  position: fixed;
+  inset-inline-start: 1rem;
+  inset-block-start: 1rem;
+  z-index: 100;
+  padding: .7rem 1rem;
+  border-radius: .6rem;
+  color: var(--white);
+  background: var(--ink);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.container {
+  width: min(calc(100% - 2rem), var(--content));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: .0625rem solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.brand:hover { color: var(--ink); }
+
+.brand img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: .8rem;
+  object-fit: cover;
+}
+
+.brand-name { font-size: 1.08rem; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .4rem .1rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: .125rem solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--blue);
+  border-bottom-color: var(--gold);
+}
+
+.legal-shell {
+  padding-block: 3.5rem 5rem;
+}
+
+.legal-document {
+  width: min(100%, var(--reading));
+  margin-inline: auto;
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.legal-kicker {
+  margin: 0 0 .7rem;
+  color: var(--blue);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  margin: 0 0 .9rem;
+  font-size: clamp(2.1rem, 6vw, 3.3rem);
+}
+
+h2 {
+  margin: 2.6rem 0 .8rem;
+  padding-top: .6rem;
+  border-top: .0625rem solid var(--line);
+  font-size: 1.55rem;
+}
+
+h3 {
+  margin: 1.6rem 0 .55rem;
+  font-size: 1.15rem;
+}
+
+p, ul { margin-top: 0; }
+
+ul { padding-left: 1.35rem; }
+
+li + li { margin-top: .45rem; }
+
+.lead {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.placeholder {
+  display: inline-block;
+  padding: .08rem .35rem;
+  border: .0625rem dashed #8EAAB9;
+  border-radius: .3rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  font-weight: 750;
+}
+
+.note {
+  padding: 1rem 1.1rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  border-left: .22rem solid var(--gold);
+}
+
+.site-footer {
+  color: #EAF1F5;
+  background: var(--ink);
+  border-top: .1875rem solid var(--gold);
+}
+
+.footer-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+
+.footer-brand {
+  margin: 0 0 .35rem;
+  color: var(--white);
+  font-weight: 850;
+}
+
+.footer-meta {
+  margin: 0;
+  color: #DDE9EF;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.site-footer a:hover { color: var(--paper); }
+
+@media (min-width: 42rem) {
+  .container { width: min(calc(100% - 3rem), var(--content)); }
+
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+@media print {
+  :root {
+    --paper: #FFFFFF;
+    --white: #FFFFFF;
+    --ink: #000000;
+    --muted: #222222;
+    --line: #B8B8B8;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+  .skip-link,
+  .site-nav {
+    display: none;
+  }
+
+  .site-header {
+    border-bottom: .0625rem solid #B8B8B8;
+  }
+
+  .brand img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .legal-shell { padding-block: 1rem; }
+
+  .legal-document {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .site-footer {
+    margin-top: 2rem;
+    color: #000000;
+    background: #FFFFFF;
+    border-top: .125rem solid #000000;
+  }
+
+  .footer-brand,
+  .footer-meta,
+  .site-footer a {
+    color: #000000;
+  }
+
+  a { color: #000000; }
+
+  h2 {
+    break-after: avoid;
+    border-top-color: #666666;
+  }
+
+  p, li { orphans: 3; widows: 3; }
+}
+
+  </style>
 </head>
 <body>
 
-<header class="entete">
-  <div class="enveloppe">
-    <a class="marque" href="/">20/20 <span>?</span></a>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Questionne Moi, accueil">
+      <img src="assets/logo.png" alt="Logo Questionne Moi, point d’interrogation doré sur fond bleu encre">
+      <span class="brand-name">Questionne Moi</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#fonctionnement">Comment ça marche</a></li>
+        <li><a href="index.html#donnees">Vos données</a></li>
+        <li><a href="index.html#faq">Questions fréquentes</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<main class="texte">
-  <div class="enveloppe">
-    <h1>Conditions générales d'utilisation</h1>
-    <p>Dernière mise à jour : 13 septembre 2026. En créant un compte, vous
-    acceptez ces conditions.</p>
+<main id="contenu" class="legal-shell">
+  <article class="legal-document">
+    <h1>Conditions générales d’utilisation</h1>
+    <p class="lead">Les présentes conditions encadrent l’utilisation de l’application Questionne Moi et de ses fonctions de révision.</p>
 
-    <h2>Le service</h2>
-    <p>Questionne Moi est une application mobile qui transforme des notes de
-    cours en matériel de révision : questionnaires à choix multiples, exercices
-    à trous, cartes de révision et version audio. Elle est éditée par Claire
-    Papetti, RCS Nice 889 981 213.</p>
+    <h2>1. Éditeur et objet du service</h2>
+    <p>Questionne Moi est édité par <strong>Claire Papetti, entreprise individuelle</strong>, nom commercial Questionne Moi, RCS Nice 889 981 213.</p>
+    <p>L’application permet à l’utilisateur de photographier des notes ou documents de cours afin d’en extraire le texte et de générer différents supports de révision : QCM, textes à trous, cartes de révision en répétition espacée et version audio découpée en chapitres.</p>
 
-    <h2>Qui peut l'utiliser</h2>
-    <p>L'application est réservée aux personnes âgées de <strong>15 ans
-    révolus</strong>. En créant un compte, vous déclarez avoir cet âge. Un
-    compte créé par une personne plus jeune sera supprimé.</p>
+    <h2>2. Gratuité actuelle</h2>
+    <p>Le service est actuellement proposé gratuitement. Si certaines fonctions devenaient payantes à l’avenir, les utilisateurs en seraient informés avant toute souscription et des conditions adaptées seraient présentées.</p>
 
-    <h2>Votre compte</h2>
-    <p>Un compte est personnel. Il n'y a pas de mot de passe : vous recevez un
-    code à usage unique par e-mail à chaque connexion. Vous êtes donc
-    responsable de l'accès à votre boîte mail et de ce qui est fait depuis
-    votre compte. Ne communiquez jamais un code reçu, et prévenez-nous si vous
-    pensez que votre compte a été utilisé à votre insu.</p>
-    <p>Vous pouvez supprimer votre compte à tout moment depuis l'application.
-    La suppression est définitive.</p>
+    <h2>3. Âge minimum</h2>
+    <p>L’utilisation de Questionne Moi est réservée aux personnes âgées d’au moins <strong>15 ans</strong>.</p>
+    <p>La date de naissance est demandée uniquement pour vérifier cette condition. Elle n’est pas conservée ; seul le résultat de la vérification d’âge l’est.</p>
 
-    <h2>Ce que vous vous engagez à ne pas faire</h2>
+    <h2>4. Création et accès au compte</h2>
+    <p>L’accès au compte repose sur l’adresse mail de l’utilisateur et un code à usage unique envoyé lors de la connexion. Aucun mot de passe permanent n’est demandé. Un pseudo peut être renseigné de façon facultative.</p>
+    <p>L’utilisateur doit fournir une adresse mail à laquelle il a légitimement accès et ne pas tenter d’accéder au compte d’une autre personne.</p>
+
+    <h2>5. Contenu généré automatiquement</h2>
+    <p>Les exercices et contenus de révision sont générés automatiquement à partir des documents importés. Ils peuvent comporter des erreurs, des approximations, des omissions ou une mauvaise interprétation du cours.</p>
+    <p><strong>L’utilisateur doit donc vérifier les informations importantes dans son cours et, si nécessaire, auprès de son enseignant.</strong> Questionne Moi est un outil de révision et ne remplace ni le document d’origine, ni l’enseignement reçu, ni le jugement de l’utilisateur.</p>
+    <p>Un bouton de signalement est prévu dans l’application afin de faire remonter un contenu qui paraît incorrect ou inadapté.</p>
+
+    <h2>6. Cours et documents photographiés</h2>
+    <p>Un cours, un support pédagogique, une fiche, une présentation ou tout autre document peut constituer une œuvre protégée par le droit d’auteur.</p>
+    <p>L’utilisation de ces documents dans Questionne Moi doit rester <strong>strictement personnelle et privée</strong>. L’utilisateur s’interdit toute diffusion, tout partage, toute republication ou toute mise à disposition publique du contenu d’un cours via Questionne Moi.</p>
+    <p>L’utilisateur garantit qu’il a le droit de photographier et d’importer les documents qu’il soumet à l’application, notamment lorsqu’ils ne sont pas ses propres notes.</p>
+
+    <h2>7. Usages interdits</h2>
+    <p>Il est notamment interdit :</p>
     <ul>
-      <li>Téléverser un contenu illicite, haineux, violent ou qui ne vous
-      appartient pas au sens de la page
-      <a href="cours-photographies.html">Utilisation des cours photographiés</a>.</li>
-      <li>Partager, revendre ou prêter votre accès.</li>
-      <li>Contourner les limites d'utilisation, automatiser vos requêtes ou
-      tenter d'extraire les clés d'accès de l'application.</li>
-      <li>Utiliser l'application pour tricher lors d'une épreuve.</li>
+      <li>d’utiliser Questionne Moi à des fins commerciales ou de revente de contenus générés ;</li>
+      <li>de tenter de contourner les limites techniques, de sécurité ou d’usage du service ;</li>
+      <li>d’importer un contenu illicite, frauduleux, malveillant ou portant atteinte aux droits d’un tiers ;</li>
+      <li>d’utiliser le service pour diffuser ou republier sans autorisation des documents de cours protégés ;</li>
+      <li>de perturber volontairement le fonctionnement de l’application, de son serveur intermédiaire ou des services techniques auxquels elle fait appel.</li>
     </ul>
 
-    <h2>Le contenu généré automatiquement</h2>
-    <p>Les questions, les explications, les corrections et la lecture audio sont
-    produites automatiquement par un programme d'intelligence artificielle à
-    partir de ce que vous photographiez.</p>
-    <p>En conséquence : <strong>ce contenu peut comporter des erreurs, des
-    approximations ou des contresens</strong>. Il ne remplace ni votre cours, ni
-    votre manuel, ni votre enseignant. L'éditrice ne garantit ni l'exactitude du
-    contenu produit, ni aucun résultat scolaire ou examen. Vérifiez toujours une
-    réponse qui vous surprend, et utilisez le bouton de signalement : les
-    questions signalées sont examinées.</p>
+    <h2>8. Données personnelles</h2>
+    <p>Les règles relatives aux données personnelles, aux photos de cours, aux prestataires techniques, aux transferts et à la suppression du compte sont détaillées dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
 
-    <h2>Disponibilité</h2>
-    <p>Le service est fourni en l'état, sans garantie de disponibilité
-    continue. Il peut être interrompu pour maintenance, pour raison technique ou
-    à cause d'un prestataire. Un usage manifestement abusif peut entraîner la
-    suspension ou la fermeture d'un compte, après avertissement lorsque c'est
-    possible.</p>
+    <h2>9. Disponibilité et évolution du service</h2>
+    <p>Questionne Moi peut faire évoluer, corriger, suspendre ou retirer une fonction afin d’assurer la maintenance, la sécurité, la conformité ou l’amélioration du service. L’éditeur ne garantit pas une disponibilité ininterrompue de l’application.</p>
 
-    <h2>Prix</h2>
-    <p>L'application est gratuite à ce jour. L'introduction d'une offre payante
-    fera l'objet de conditions générales de vente distinctes, portées à votre
-    connaissance avant tout paiement.</p>
+    <h2>10. Responsabilité</h2>
+    <p>Questionne Moi met à disposition un outil d’aide à la révision. En raison du caractère automatique de la lecture et de la génération des exercices, aucune exactitude absolue ne peut être garantie.</p>
+    <p>L’éditeur ne peut être tenu responsable d’une décision prise uniquement sur la base d’un contenu généré par l’application, d’une mauvaise interprétation d’un cours, d’une indisponibilité temporaire du service ou de la perte de données restées uniquement sur le téléphone de l’utilisateur, dans la mesure permise par la loi.</p>
+    <p>Cette limitation ne prive pas l’utilisateur des droits dont il bénéficie en vertu des règles impératives applicables.</p>
 
-    <h2>Modification des conditions</h2>
-    <p>Ces conditions peuvent évoluer. Toute modification importante vous sera
-    signalée dans l'application. Si vous refusez les nouvelles conditions, vous
-    pouvez supprimer votre compte.</p>
+    <h2>11. Suspension ou suppression d’un compte</h2>
+    <p>Questionne Moi peut suspendre ou supprimer un compte en cas d’abus, de tentative de contournement des limites, d’atteinte à la sécurité du service, d’usage manifestement illicite ou de violation grave ou répétée des présentes conditions.</p>
+    <p>Lorsque la situation le permet, l’utilisateur est informé du motif de la mesure prise.</p>
 
-    <h2>Droit applicable</h2>
-    <p>Ces conditions sont soumises au droit français. En cas de litige, une
-    solution amiable sera recherchée en priorité ; à défaut, les tribunaux
-    français seront compétents. Si vous êtes consommateur, vous conservez le
-    droit de saisir la juridiction de votre lieu de résidence.</p>
+    <h2>12. Propriété intellectuelle de Questionne Moi</h2>
+    <p>Le nom Questionne Moi, le logo, l’interface, les textes, les éléments graphiques et le code de l’application ou du site restent protégés par les règles applicables à la propriété intellectuelle. Les présentes conditions n’emportent aucun transfert de propriété au profit de l’utilisateur.</p>
 
-    <p><a class="retour" href="/">Retour à l'accueil</a></p>
-  </div>
+    <h2>13. Suppression du compte</h2>
+    <p>L’utilisateur peut supprimer son compte depuis l’application. La suppression entraîne l’effacement réel des données de compte détenues par Questionne Moi, dans les conditions décrites dans la politique de confidentialité.</p>
+
+    <h2>14. Modification des CGU</h2>
+    <p>Les présentes conditions peuvent être mises à jour si le service, ses fonctions ou le cadre juridique évoluent. La version applicable est celle mise à disposition avec le service au moment de l’utilisation.</p>
+
+    <h2>15. Droit applicable</h2>
+    <p>Les présentes CGU sont régies par le <strong>droit français</strong>. En cas de litige, les règles de compétence juridictionnelle prévues par la loi s’appliquent.</p>
+
+    <h2>16. Contact</h2>
+    <p>Pour toute question relative aux présentes conditions : <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>.</p>
+    <p>Adresse de l’éditeur : 26 avenue de Flirey, bâtiment Les Jasmins, 06000 Nice.</p>
+
+    <h2>17. Mise à jour</h2>
+    <p>Dernière mise à jour : 21 septembre 2026.</p>
+  </article>
 </main>
 
-<footer class="pied">
-  <div class="enveloppe">
-    <ul>
-      <li><a href="mentions-legales.html">Mentions légales</a></li>
-      <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-      <li><a href="cgu.html">Conditions générales d'utilisation</a></li>
-      <li><a href="cours-photographies.html">Utilisation des cours photographiés</a></li>
-      <li><a href="suppression-compte.html">Supprimer son compte</a></li>
-    </ul>
-    <p>Questionne Moi — Claire Papetti, RCS Nice 889 981 213.</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">Questionne Moi</p>
+      <p class="footer-meta">Édité par Claire Papetti, entreprise individuelle, RCS Nice 889 981 213</p>
+      <p class="footer-meta"><a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a></p>
+    </div>
+    <nav aria-label="Liens juridiques">
+      <ul class="footer-links">
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgu.html">CGU</a></li>
+        <li><a href="suppression-compte.html">Supprimer son compte</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 

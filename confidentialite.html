@@ -1,155 +1,470 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Politique de confidentialité — Questionne Moi</title>
-<meta name="description" content="Quelles données Questionne Moi collecte, pourquoi, combien de temps, avec qui elles sont partagées et comment exercer vos droits.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#072D42">
+  <meta name="robots" content="index,follow">
+  <title>Politique de confidentialité | Questionne Moi</title>
+  <meta name="description" content="Ce que Questionne Moi collecte, pourquoi, combien de temps, et comment exercer ses droits.">
+  <link rel="canonical" href="https://www.questionnemoi.com/confidentialite.html">
+  <link rel="icon" href="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Questionne Moi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Politique de confidentialité | Questionne Moi">
+  <meta property="og:description" content="Ce que Questionne Moi collecte, pourquoi, combien de temps, et comment exercer ses droits.">
+  <meta property="og:url" content="https://www.questionnemoi.com/confidentialite.html">
+  <meta property="og:image" content="https://www.questionnemoi.com/assets/partage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+
+:root {
+  --ink: #072D42;
+  --blue: #0B4F71;
+  --blue-deep: #083D58;
+  --gold: #F0B429;
+  --paper: #EAF1F5;
+  --white: #FFFFFF;
+  --muted: #3E5968;
+  --line: #C8D7E0;
+  --content: 72rem;
+  --reading: 48rem;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: var(--blue);
+  text-underline-offset: .18em;
+  text-decoration-thickness: .08em;
+}
+
+a:hover { color: var(--blue-deep); }
+
+a:focus-visible {
+  outline: .1875rem solid var(--white);
+  outline-offset: .1875rem;
+  box-shadow: 0 0 0 .375rem var(--blue);
+  border-radius: .35rem;
+}
+
+.skip-link {
+  position: fixed;
+  inset-inline-start: 1rem;
+  inset-block-start: 1rem;
+  z-index: 100;
+  padding: .7rem 1rem;
+  border-radius: .6rem;
+  color: var(--white);
+  background: var(--ink);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.container {
+  width: min(calc(100% - 2rem), var(--content));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: .0625rem solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.brand:hover { color: var(--ink); }
+
+.brand img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: .8rem;
+  object-fit: cover;
+}
+
+.brand-name { font-size: 1.08rem; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .4rem .1rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: .125rem solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--blue);
+  border-bottom-color: var(--gold);
+}
+
+.legal-shell {
+  padding-block: 3.5rem 5rem;
+}
+
+.legal-document {
+  width: min(100%, var(--reading));
+  margin-inline: auto;
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.legal-kicker {
+  margin: 0 0 .7rem;
+  color: var(--blue);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  margin: 0 0 .9rem;
+  font-size: clamp(2.1rem, 6vw, 3.3rem);
+}
+
+h2 {
+  margin: 2.6rem 0 .8rem;
+  padding-top: .6rem;
+  border-top: .0625rem solid var(--line);
+  font-size: 1.55rem;
+}
+
+h3 {
+  margin: 1.6rem 0 .55rem;
+  font-size: 1.15rem;
+}
+
+p, ul { margin-top: 0; }
+
+ul { padding-left: 1.35rem; }
+
+li + li { margin-top: .45rem; }
+
+.lead {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.placeholder {
+  display: inline-block;
+  padding: .08rem .35rem;
+  border: .0625rem dashed #8EAAB9;
+  border-radius: .3rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  font-weight: 750;
+}
+
+.note {
+  padding: 1rem 1.1rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  border-left: .22rem solid var(--gold);
+}
+
+.site-footer {
+  color: #EAF1F5;
+  background: var(--ink);
+  border-top: .1875rem solid var(--gold);
+}
+
+.footer-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+
+.footer-brand {
+  margin: 0 0 .35rem;
+  color: var(--white);
+  font-weight: 850;
+}
+
+.footer-meta {
+  margin: 0;
+  color: #DDE9EF;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.site-footer a:hover { color: var(--paper); }
+
+@media (min-width: 42rem) {
+  .container { width: min(calc(100% - 3rem), var(--content)); }
+
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+@media print {
+  :root {
+    --paper: #FFFFFF;
+    --white: #FFFFFF;
+    --ink: #000000;
+    --muted: #222222;
+    --line: #B8B8B8;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+  .skip-link,
+  .site-nav {
+    display: none;
+  }
+
+  .site-header {
+    border-bottom: .0625rem solid #B8B8B8;
+  }
+
+  .brand img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .legal-shell { padding-block: 1rem; }
+
+  .legal-document {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .site-footer {
+    margin-top: 2rem;
+    color: #000000;
+    background: #FFFFFF;
+    border-top: .125rem solid #000000;
+  }
+
+  .footer-brand,
+  .footer-meta,
+  .site-footer a {
+    color: #000000;
+  }
+
+  a { color: #000000; }
+
+  h2 {
+    break-after: avoid;
+    border-top-color: #666666;
+  }
+
+  p, li { orphans: 3; widows: 3; }
+}
+
+  </style>
 </head>
 <body>
 
-<header class="entete">
-  <div class="enveloppe">
-    <a class="marque" href="/">20/20 <span>?</span></a>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Questionne Moi, accueil">
+      <img src="assets/logo.png" alt="Logo Questionne Moi, point d’interrogation doré sur fond bleu encre">
+      <span class="brand-name">Questionne Moi</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#fonctionnement">Comment ça marche</a></li>
+        <li><a href="index.html#donnees">Vos données</a></li>
+        <li><a href="index.html#faq">Questions fréquentes</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<main class="texte">
-  <div class="enveloppe">
+<main id="contenu" class="legal-shell">
+  <article class="legal-document">
     <h1>Politique de confidentialité</h1>
-    <p>Dernière mise à jour : 13 septembre 2026.</p>
-    <p>Cette page explique ce que l'application Questionne Moi fait de vos
-    données. Elle est écrite pour être lue en entier : si un point vous semble
-    obscur, écrivez-nous et nous le reformulerons.</p>
+    <p class="lead">Cette politique explique quelles données sont traitées par Questionne Moi, pourquoi elles le sont, où elles se trouvent et comment exercer vos droits.</p>
 
-    <h2>Qui est responsable de vos données</h2>
-    <p>Claire Papetti, entrepreneur individuel, RCS Nice 889 981 213, éditrice
-    de Questionne Moi. Pour toute question :
-    <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>.
-    L'adresse postale figure dans les
-    <a href="mentions-legales.html">mentions légales</a>.</p>
+    <h2>1. Responsable du traitement</h2>
+    <p>Le responsable du traitement est <strong>Claire Papetti, entreprise individuelle</strong>, nom commercial Questionne Moi, RCS Nice 889 981 213.</p>
+    <p>Adresse : 26 avenue de Flirey, bâtiment Les Jasmins, 06000 Nice<br>
+    Contact pour les questions de confidentialité et l’exercice des droits : <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>.</p>
 
-    <h2>Ce que nous collectons, et pourquoi</h2>
-
-    <h2>Votre compte</h2>
-    <p>Adresse e-mail, date d'inscription, identifiant interne, et le fait que
-    vous ayez déclaré avoir l'âge minimum. Ces données servent à vous
-    identifier, à vous laisser retrouver votre compte, à appliquer une limite
-    d'utilisation par personne et à vérifier l'âge minimum. Base légale :
-    l'exécution du contrat qui nous lie, c'est-à-dire la fourniture du service
-    que vous avez demandé.</p>
-    <p><strong>Il n'y a pas de mot de passe.</strong> Vous recevez un code à
-    usage unique par e-mail à chaque connexion. Nous ne détenons donc aucun mot
-    de passe, et vous n'avez rien à retenir.</p>
-    <p>Vous pouvez ajouter un <strong>pseudo</strong>, facultatif. Il sert
-    uniquement à l'affichage dans l'application, personne d'autre ne le voit.
-    Si vous y mettez votre prénom, il devient une donnée personnelle : vous
-    pouvez le modifier ou le vider à tout moment depuis votre profil.</p>
-    <p>Nous ne demandons ni votre nom, ni votre établissement, ni votre classe.
-    Votre date de naissance vous est demandée une seule fois, à l'inscription,
-    pour calculer votre âge : <strong>elle n'est pas conservée</strong>. Seul le
-    résultat du calcul l'est.</p>
-
-    <h2>Les cours que vous photographiez</h2>
-    <p>La photo est envoyée à notre serveur, qui la transmet au prestataire
-    chargé d'en lire le texte et d'en tirer des questions. Le texte reconnu
-    et les questions produites sont ensuite <strong>enregistrés sur votre
-    téléphone</strong>. Nous ne conservons ni la photo, ni le texte, ni les
-    questions sur nos propres serveurs, et la photo est effacée de votre
-    téléphone une fois le cours lu. Base légale : l'exécution du contrat.</p>
-
-    <h2>Vos résultats de révision</h2>
-    <p>Scores, séries, cartes réussies ou ratées. Ces informations restent
-    stockées sur votre téléphone et servent à décider quelles notions vous
-    reproposer. Désinstaller l'application les efface.</p>
-
-    <h2>Les journaux techniques</h2>
-    <p>Notre serveur enregistre l'adresse IP, la date et l'heure de chaque
-    requête. Cela sert uniquement à détecter les abus et à limiter le nombre de
-    requêtes. Base légale : notre intérêt légitime à protéger le service.</p>
-
-    <h2>Combien de temps</h2>
+    <h2>2. Données liées au compte</h2>
+    <p>Questionne Moi collecte uniquement les données de compte nécessaires au fonctionnement du service :</p>
     <ul>
-      <li>Données de compte : tant que le compte existe, puis effacement à la
-      suppression du compte.</li>
-      <li>Date de naissance : jamais conservée, utilisée le temps du calcul.</li>
-      <li>Photos de cours : transmises puis non conservées, ni par nous ni sur
-      votre téléphone.</li>
-      <li>Texte des cours, questions et résultats : sur votre téléphone, jusqu'à
-      ce que vous les supprimiez ou désinstalliez l'application.</li>
-      <li>Journaux techniques : trente jours au maximum.</li>
+      <li><strong>l’adresse mail</strong>, utilisée pour la connexion par code à usage unique, sans mot de passe ;</li>
+      <li><strong>un pseudo</strong>, facultatif ;</li>
+      <li><strong>le résultat de la vérification d’âge</strong>, afin de confirmer que l’utilisateur remplit la condition d’âge minimum.</li>
+    </ul>
+    <p>La date de naissance est demandée une seule fois pour vérifier que l’utilisateur a au moins 15 ans. <strong>Elle n’est jamais conservée.</strong> Seul le résultat de cette vérification est enregistré.</p>
+
+    <h2>3. Photos de cours</h2>
+    <p>Lorsque l’utilisateur photographie des notes de cours, les images sont transmises uniquement afin d’en lire le contenu. Elles ne sont pas conservées sur un serveur par Questionne Moi.</p>
+    <p>Une fois la lecture réussie, les photos sont également effacées du téléphone par l’application. Le traitement des images sert uniquement à produire le texte nécessaire à la création des exercices de révision.</p>
+
+    <h2>4. Données qui restent sur le téléphone</h2>
+    <p>Le <strong>texte transcrit</strong>, les <strong>questions générées</strong> et les <strong>statistiques de révision</strong> restent sur le téléphone de l’élève. Ils ne sont pas stockés dans le compte en ligne Questionne Moi.</p>
+    <p>La suppression de l’application ou la perte de l’appareil peut donc entraîner la perte de ces données locales si aucune fonction de sauvegarde distincte n’est mise en place.</p>
+
+    <h2>5. Signalement d’une question erronée</h2>
+    <p>Chaque question de l’application comporte un bouton de signalement. Lorsqu’une question est signalée, elle est immédiatement retirée des séries suivantes sur le téléphone, et les éléments suivants sont transmis au serveur de Questionne Moi :</p>
+    <ul>
+      <li>l’énoncé de la question et la réponse présentée comme juste ;</li>
+      <li>le motif choisi parmi une liste fermée ;</li>
+      <li>l’identifiant technique du compte, qui n’est pas l’adresse mail.</li>
+    </ul>
+    <p>L’adresse mail n’est pas transmise. Ces éléments servent uniquement à repérer les questions mal formulées et à améliorer la qualité des exercices.</p>
+
+    <h2>6. Finalités du traitement</h2>
+    <p>Les données sont utilisées pour :</p>
+    <ul>
+      <li>créer et sécuriser l’accès au compte ;</li>
+      <li>vérifier la condition d’âge minimum ;</li>
+      <li>lire les photos de cours à la demande de l’utilisateur ;</li>
+      <li>fournir les fonctions de révision demandées ;</li>
+      <li>traiter les signalements de questions erronées ;</li>
+      <li>permettre la suppression du compte et traiter les demandes relatives aux droits des utilisateurs.</li>
+    </ul>
+    <p>Questionne Moi ne revend pas les données personnelles de ses utilisateurs.</p>
+
+    <h2>7. Sous-traitants</h2>
+    <p>Questionne Moi fait appel aux prestataires suivants, uniquement pour les besoins techniques décrits ci-dessous :</p>
+    <ul>
+      <li><strong>Anthropic</strong>, États-Unis : lecture des photos de cours afin d’en extraire le texte, puis fabrication des exercices de révision (QCM, textes à trous, cartes, version audio) à partir de ce texte ;</li>
+      <li><strong>Supabase</strong> : gestion technique des comptes et des données de compte ;</li>
+      <li><strong>Cloudflare</strong> : serveur intermédiaire utilisé pour le fonctionnement du service et hébergement du présent site.</li>
+    </ul>
+    <p>Ces prestataires traitent les données pour fournir leurs services techniques à Questionne Moi, dans la limite de ce qui est nécessaire à leur mission.</p>
+
+    <h2>8. Transferts hors de l’Union européenne</h2>
+    <p>Les photos de cours, ainsi que le texte des cours lorsque des exercices sont fabriqués, sont traités aux États-Unis par Anthropic. Ce transfert hors de l’Union européenne est encadré par les <strong>clauses contractuelles types</strong> prévues pour les transferts de données personnelles.</p>
+    <p>Les photos sont utilisées pour la lecture demandée et ne sont pas conservées comme fichiers par Questionne Moi sur un serveur.</p>
+
+    <h2>9. Durées de conservation</h2>
+    <ul>
+      <li>Le <strong>compte</strong> est conservé tant que l’utilisateur ne le supprime pas.</li>
+      <li>La <strong>date de naissance</strong> n’est pas conservée après le contrôle d’âge.</li>
+      <li>Les <strong>signalements de questions</strong> sont conservés quelques jours dans les journaux techniques du serveur, puis effacés automatiquement.</li>
+      <li>Les <strong>photos de cours</strong> ne sont pas conservées sur un serveur et sont effacées du téléphone dès que leur lecture a réussi.</li>
+      <li>Le <strong>texte transcrit, les questions et les statistiques</strong> restent sur l’appareil de l’utilisateur jusqu’à leur suppression locale ou à la suppression de l’application.</li>
     </ul>
 
-    <h2>Avec qui vos données sont partagées</h2>
-    <p>Nous ne vendons aucune donnée et n'affichons aucune publicité. Nous
-    faisons appel à trois prestataires, qui n'agissent que sur nos instructions :</p>
+    <h2>10. Suppression du compte</h2>
+    <p>L’utilisateur peut supprimer son compte directement depuis l’application. Cette action entraîne l’effacement réel des données de compte détenues par Questionne Moi, sous réserve des informations qu’une obligation légale imposerait exceptionnellement de conserver.</p>
+    <p>La suppression du compte efface également tout ce que l’application conserve sur le téléphone : cours, textes transcrits, questions, cartes, statistiques, réglages, ainsi que les éventuelles copies de photos restées dans le cache. Aucune donnée liée au compte ne subsiste sur l’appareil après la suppression.</p>
+
+    <h2>11. Vos droits</h2>
+    <p>Selon les conditions prévues par la réglementation applicable, vous pouvez demander :</p>
     <ul>
-      <li><strong>Anthropic PBC</strong> (États-Unis) : lecture du cours
-      photographié et production des questions. Vos contenus ne servent pas à
-      entraîner ses modèles.</li>
-      <li><strong>Cloudflare, Inc.</strong> (États-Unis) : hébergement du site et
-      du serveur intermédiaire.</li>
-      <li><strong>Supabase, Inc.</strong> : gestion des comptes et envoi des
-      codes de connexion. Vos données de compte sont hébergées
-      <strong>en Irlande</strong> et ne quittent pas l'Union européenne.</li>
+      <li>l’accès à vos données ;</li>
+      <li>leur rectification ;</li>
+      <li>leur effacement ;</li>
+      <li>vous opposer à certains traitements ;</li>
+      <li>la portabilité des données lorsque ce droit s’applique.</li>
     </ul>
+    <p>Pour exercer ces droits, écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a> ou à l’adresse suivante : 26 avenue de Flirey, bâtiment Les Jasmins, 06000 Nice.</p>
+    <p>Vous pouvez également adresser une réclamation à la <strong>Commission nationale de l’informatique et des libertés (CNIL)</strong>.</p>
 
-    <h2>Le transfert hors d'Europe</h2>
-    <p>Un seul flux quitte l'Europe : <strong>les photos de cours et le texte
-    qui en est extrait</strong>, traités aux États-Unis pour produire les
-    questions. Vos données de compte, elles, restent hébergées en Irlande.</p>
-    <p>Ce transfert est encadré par les clauses contractuelles types adoptées
-    par la Commission européenne, complétées par les engagements de sécurité de
-    nos prestataires. Vous pouvez nous demander une copie de ces garanties.</p>
+    <h2>12. Utilisateurs mineurs et âge minimum</h2>
+    <p>Questionne Moi est destiné aux personnes âgées d’au moins <strong>15 ans</strong>. Ce seuil tient compte du cadre français applicable à l’utilisation de services numériques par les mineurs : à partir de 15 ans, un mineur peut, dans les situations prévues par la loi, consentir lui-même à certains traitements de données liés à un service qui lui est proposé directement.</p>
+    <p>En pratique, Questionne Moi demande la date de naissance une seule fois pour vérifier l’âge. La date elle-même est ensuite supprimée ; seul le fait que la condition d’âge est remplie est conservé.</p>
 
-    <h2>Les mineurs</h2>
-    <p>L'application est réservée aux personnes de <strong>15 ans et plus</strong>.
-    L'âge est demandé à l'inscription. Si nous apprenons qu'un compte a été créé
-    par une personne plus jeune, ce compte est supprimé et ses données effacées.
-    Un parent qui constate qu'un enfant de moins de 15 ans a créé un compte peut
-    nous écrire : nous le supprimerons sans délai.</p>
+    <h2>13. Sécurité</h2>
+    <p>Questionne Moi limite la collecte aux données nécessaires au fonctionnement du service et s’appuie sur des prestataires spécialisés pour les opérations de compte, d’hébergement intermédiaire et de lecture des cours. Aucune méthode de stockage ou de transmission ne peut toutefois garantir un risque nul.</p>
 
-    <h2>Vos droits</h2>
-    <p>Vous pouvez demander à accéder à vos données, à les corriger, à les faire
-    effacer, à en limiter l'usage, à vous opposer à un traitement ou à recevoir
-    vos données dans un format lisible par une machine.</p>
-    <p>Pour exercer ces droits, écrivez à contactquestionnemoi@gmail.com. Nous
-    répondons sous un mois. Pour supprimer votre compte sans nous écrire, suivez
-    la page <a href="suppression-compte.html">Supprimer son compte</a>.</p>
-    <p>Si notre réponse ne vous satisfait pas, vous pouvez saisir la Commission
-    nationale de l'informatique et des libertés, 3 place de Fontenoy,
-    TSA 80715, 75334 Paris Cedex 07, ou sur <a href="https://www.cnil.fr">cnil.fr</a>.</p>
+    <h2>14. Cookies et traceurs sur ce site</h2>
+    <p>Le présent site vitrine ne dépose aucun cookie de mesure d’audience, de publicité ou de personnalisation et ne charge aucune ressource depuis un domaine extérieur. Il ne comporte donc pas de bandeau de consentement aux cookies.</p>
 
-    <h2>Sécurité</h2>
-    <p>Les échanges entre l'application et nos serveurs sont chiffrés. La clé
-    d'accès au prestataire d'intelligence artificielle n'est pas présente dans
-    l'application : elle reste sur notre serveur. L'absence de mot de passe
-    supprime le risque qu'un mot de passe réutilisé ailleurs compromette votre
-    compte ici. Le nombre de requêtes est limité pour éviter les abus.</p>
-
-    <h2>Modifications</h2>
-    <p>Toute modification de cette politique sera publiée sur cette page, avec
-    une nouvelle date de mise à jour. Un changement important vous sera signalé
-    dans l'application.</p>
-
-    <p><a class="retour" href="/">Retour à l'accueil</a></p>
-  </div>
+    <h2>15. Mise à jour de la politique</h2>
+    <p>Cette politique pourra évoluer si le fonctionnement de l’application, les prestataires ou les obligations applicables changent.</p>
+    <p>Dernière mise à jour : 21 septembre 2026.</p>
+  </article>
 </main>
 
-<footer class="pied">
-  <div class="enveloppe">
-    <ul>
-      <li><a href="mentions-legales.html">Mentions légales</a></li>
-      <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-      <li><a href="cgu.html">Conditions générales d'utilisation</a></li>
-      <li><a href="cours-photographies.html">Utilisation des cours photographiés</a></li>
-      <li><a href="suppression-compte.html">Supprimer son compte</a></li>
-    </ul>
-    <p>Questionne Moi — Claire Papetti, RCS Nice 889 981 213.</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">Questionne Moi</p>
+      <p class="footer-meta">Édité par Claire Papetti, entreprise individuelle, RCS Nice 889 981 213</p>
+      <p class="footer-meta"><a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a></p>
+    </div>
+    <nav aria-label="Liens juridiques">
+      <ul class="footer-links">
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgu.html">CGU</a></li>
+        <li><a href="suppression-compte.html">Supprimer son compte</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 

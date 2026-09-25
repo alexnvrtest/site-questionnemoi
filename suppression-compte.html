@@ -1,78 +1,410 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Supprimer son compte — Questionne Moi</title>
-<meta name="description" content="Comment supprimer votre compte Questionne Moi et vos données, depuis l'application ou par e-mail.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#072D42">
+  <meta name="robots" content="index,follow">
+  <title>Supprimer son compte | Questionne Moi</title>
+  <meta name="description" content="Comment supprimer son compte Questionne Moi et les données associées, depuis l'application ou par mail.">
+  <link rel="canonical" href="https://www.questionnemoi.com/suppression-compte.html">
+  <link rel="icon" href="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Questionne Moi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Supprimer son compte | Questionne Moi">
+  <meta property="og:description" content="Comment supprimer son compte Questionne Moi et les données associées, depuis l'application ou par mail.">
+  <meta property="og:url" content="https://www.questionnemoi.com/suppression-compte.html">
+  <meta property="og:image" content="https://www.questionnemoi.com/assets/partage.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+
+:root {
+  --ink: #072D42;
+  --blue: #0B4F71;
+  --blue-deep: #083D58;
+  --gold: #F0B429;
+  --paper: #EAF1F5;
+  --white: #FFFFFF;
+  --muted: #3E5968;
+  --line: #C8D7E0;
+  --content: 72rem;
+  --reading: 48rem;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: var(--blue);
+  text-underline-offset: .18em;
+  text-decoration-thickness: .08em;
+}
+
+a:hover { color: var(--blue-deep); }
+
+a:focus-visible {
+  outline: .1875rem solid var(--white);
+  outline-offset: .1875rem;
+  box-shadow: 0 0 0 .375rem var(--blue);
+  border-radius: .35rem;
+}
+
+.skip-link {
+  position: fixed;
+  inset-inline-start: 1rem;
+  inset-block-start: 1rem;
+  z-index: 100;
+  padding: .7rem 1rem;
+  border-radius: .6rem;
+  color: var(--white);
+  background: var(--ink);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.container {
+  width: min(calc(100% - 2rem), var(--content));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: .0625rem solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.brand:hover { color: var(--ink); }
+
+.brand img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: .8rem;
+  object-fit: cover;
+}
+
+.brand-name { font-size: 1.08rem; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .4rem .1rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: .125rem solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--blue);
+  border-bottom-color: var(--gold);
+}
+
+.legal-shell {
+  padding-block: 3.5rem 5rem;
+}
+
+.legal-document {
+  width: min(100%, var(--reading));
+  margin-inline: auto;
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.legal-kicker {
+  margin: 0 0 .7rem;
+  color: var(--blue);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  margin: 0 0 .9rem;
+  font-size: clamp(2.1rem, 6vw, 3.3rem);
+}
+
+h2 {
+  margin: 2.6rem 0 .8rem;
+  padding-top: .6rem;
+  border-top: .0625rem solid var(--line);
+  font-size: 1.55rem;
+}
+
+h3 {
+  margin: 1.6rem 0 .55rem;
+  font-size: 1.15rem;
+}
+
+p, ul { margin-top: 0; }
+
+ul { padding-left: 1.35rem; }
+
+li + li { margin-top: .45rem; }
+
+.lead {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.placeholder {
+  display: inline-block;
+  padding: .08rem .35rem;
+  border: .0625rem dashed #8EAAB9;
+  border-radius: .3rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  font-weight: 750;
+}
+
+.note {
+  padding: 1rem 1.1rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  border-left: .22rem solid var(--gold);
+}
+
+.site-footer {
+  color: #EAF1F5;
+  background: var(--ink);
+  border-top: .1875rem solid var(--gold);
+}
+
+.footer-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+
+.footer-brand {
+  margin: 0 0 .35rem;
+  color: var(--white);
+  font-weight: 850;
+}
+
+.footer-meta {
+  margin: 0;
+  color: #DDE9EF;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.site-footer a:hover { color: var(--paper); }
+
+@media (min-width: 42rem) {
+  .container { width: min(calc(100% - 3rem), var(--content)); }
+
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+@media print {
+  :root {
+    --paper: #FFFFFF;
+    --white: #FFFFFF;
+    --ink: #000000;
+    --muted: #222222;
+    --line: #B8B8B8;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+  .skip-link,
+  .site-nav {
+    display: none;
+  }
+
+  .site-header {
+    border-bottom: .0625rem solid #B8B8B8;
+  }
+
+  .brand img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .legal-shell { padding-block: 1rem; }
+
+  .legal-document {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .site-footer {
+    margin-top: 2rem;
+    color: #000000;
+    background: #FFFFFF;
+    border-top: .125rem solid #000000;
+  }
+
+  .footer-brand,
+  .footer-meta,
+  .site-footer a {
+    color: #000000;
+  }
+
+  a { color: #000000; }
+
+  h2 {
+    break-after: avoid;
+    border-top-color: #666666;
+  }
+
+  p, li { orphans: 3; widows: 3; }
+}
+
+  </style>
 </head>
 <body>
 
-<header class="entete">
-  <div class="enveloppe">
-    <a class="marque" href="/">20/20 <span>?</span></a>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Questionne Moi, accueil">
+      <img src="assets/logo.png" alt="Logo Questionne Moi, point d’interrogation doré sur fond bleu encre">
+      <span class="brand-name">Questionne Moi</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#fonctionnement">Comment ça marche</a></li>
+        <li><a href="index.html#donnees">Vos données</a></li>
+        <li><a href="index.html#faq">Questions fréquentes</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<main class="texte">
-  <div class="enveloppe">
-    <h1>Supprimer son compte</h1>
-    <p>Dernière mise à jour : 13 septembre 2026. Cette page concerne
-    l'application Questionne Moi, éditée par Claire Papetti.</p>
+<main id="contenu" class="legal-shell">
+  <article class="legal-document">
+    <h1>Supprimer son compte Questionne&nbsp;Moi</h1>
+    <p class="lead">Questionne Moi est édité par Claire Papetti, entreprise individuelle, RCS Nice 889 981 213. Cette page explique comment demander la suppression de son compte et des données associées.</p>
 
-    <h2>Depuis l'application</h2>
-    <p>Ouvrez l'application, allez dans l'onglet <strong>Profil</strong>, puis
-    <strong>Supprimer mon compte</strong>. Deux confirmations vous seront
-    demandées. La suppression est immédiate et définitive.</p>
-
-    <h2>Si vous avez désinstallé l'application</h2>
-    <p>Écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>
-    depuis l'adresse e-mail de votre compte, avec pour objet « Suppression de
-    compte ». Nous traitons la demande sous trente jours au plus, en général
-    bien avant.</p>
-
-    <h2>Ce qui est supprimé</h2>
+    <h2>1. Depuis l’application, en deux touches</h2>
+    <p>C’est la méthode la plus rapide, et la suppression est immédiate.</p>
     <ul>
-      <li>Votre adresse e-mail et votre pseudo s'il y en a un.</li>
-      <li>Votre date d'inscription, votre identifiant interne et la mention
-      selon laquelle votre âge a été vérifié.</li>
-      <li>Tout ce que l'application avait enregistré sur votre téléphone :
-      cours, textes reconnus, questions, cartes de révision, statistiques,
-      séries, réglages et photos restées en mémoire.</li>
+      <li>Ouvrir l’application Questionne Moi.</li>
+      <li>Aller dans l’onglet <strong>Profil</strong>, en bas de l’écran.</li>
+      <li>Appuyer sur <strong>Supprimer mon compte</strong>, en bas de la page.</li>
+      <li>Confirmer deux fois. La seconde confirmation déclenche l’effacement.</li>
+    </ul>
+    <p class="note">La suppression est définitive et immédiate. Il n’existe aucun moyen de revenir en arrière, ni de récupérer les cours enregistrés.</p>
+
+    <h2>2. Par courrier électronique</h2>
+    <p>Si l’application n’est plus installée, ou si l’accès au compte est impossible, écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a> en demandant la suppression du compte.</p>
+    <p>Envoyez le message <strong>depuis l’adresse mail du compte concerné</strong> : c’est ce qui permet de vérifier qu’il s’agit bien du vôtre, sans avoir à demander d’autres justificatifs. La demande est traitée dans un délai maximum d’un mois.</p>
+
+    <h2>3. Ce qui est supprimé</h2>
+    <ul>
+      <li>Le compte lui-même, ainsi que l’adresse mail qui lui est associée.</li>
+      <li>Le pseudo, s’il a été renseigné.</li>
+      <li>La mention indiquant que la condition d’âge a été vérifiée.</li>
+      <li>Sur le téléphone : les cours enregistrés, les textes transcrits, les questions, les cartes de révision, les chapitres audio, les statistiques, la série de jours consécutifs et les réglages.</li>
+      <li>Sur le téléphone toujours : les éventuelles copies de photos restées dans le cache de l’application.</li>
     </ul>
 
-    <h2>Ce qui peut subsister quelque temps</h2>
-    <p>Les journaux techniques de notre serveur, qui contiennent l'adresse IP et
-    l'horodatage des requêtes, sont conservés au maximum <strong>trente
-    jours</strong> pour des raisons de sécurité, puis effacés automatiquement.
-    Ils ne permettent pas de reconstituer vos cours ni vos révisions.</p>
-    <p>Une demande envoyée par e-mail est conservée le temps de la traiter et de
-    prouver qu'elle a été traitée.</p>
+    <h2>4. Ce qui n’est pas conservé, et n’a donc pas à être supprimé</h2>
+    <p>Les photos de cours ne sont stockées sur aucun serveur de Questionne Moi. Elles sont transmises pour être lues, puis effacées du téléphone dès que la lecture a réussi.</p>
+    <p>Le texte des cours, les questions et les statistiques ne sont pas stockés en ligne : ils vivent uniquement sur le téléphone.</p>
 
-    <h2>Un compte créé par un mineur de moins de 15 ans</h2>
-    <p>L'application est réservée aux 15 ans et plus. Un parent ou un titulaire
-    de l'autorité parentale qui constate qu'un enfant plus jeune a créé un
-    compte peut nous écrire à la même adresse : le compte est supprimé sans
-    délai et sans condition.</p>
+    <h2>5. Ce qui subsiste temporairement</h2>
+    <p>Les journaux techniques du serveur, utilisés pour diagnostiquer les pannes, sont conservés quelques jours puis effacés automatiquement. Ils peuvent contenir l’identifiant technique d’un compte supprimé, mais pas son adresse mail.</p>
+    <p>Si une question erronée a été signalée depuis le compte, le signalement suit la même durée : quelques jours dans ces journaux, sans adresse mail.</p>
+    <p>Aucune autre donnée n’est conservée après la suppression du compte.</p>
 
-    <p><a class="retour" href="/">Retour à l'accueil</a></p>
-  </div>
+    <h2>6. En savoir plus</h2>
+    <p>Le détail des données traitées, de leur finalité et de leur durée de conservation figure dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+  </article>
 </main>
 
-<footer class="pied">
-  <div class="enveloppe">
-    <ul>
-      <li><a href="mentions-legales.html">Mentions légales</a></li>
-      <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-      <li><a href="cgu.html">Conditions générales d'utilisation</a></li>
-      <li><a href="cours-photographies.html">Utilisation des cours photographiés</a></li>
-      <li><a href="suppression-compte.html">Supprimer son compte</a></li>
-    </ul>
-    <p>Questionne Moi — Claire Papetti, RCS Nice 889 981 213.</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">Questionne Moi</p>
+      <p class="footer-meta">Édité par Claire Papetti, entreprise individuelle, RCS Nice 889 981 213</p>
+      <p class="footer-meta"><a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a></p>
+    </div>
+    <nav aria-label="Liens juridiques">
+      <ul class="footer-links">
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgu.html">CGU</a></li>
+        <li><a href="suppression-compte.html">Supprimer son compte</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 
