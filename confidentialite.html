@@ -375,14 +375,27 @@ li + li { margin-top: .45rem; }
     <p>Le <strong>texte transcrit</strong>, les <strong>questions générées</strong> et les <strong>statistiques de révision</strong> restent sur le téléphone de l’élève. Ils ne sont pas stockés dans le compte en ligne Questionne Moi.</p>
     <p>La suppression de l’application ou la perte de l’appareil peut donc entraîner la perte de ces données locales si aucune fonction de sauvegarde distincte n’est mise en place.</p>
 
-    <h2>5. Signalement d’une question erronée</h2>
+    <h2>5. Signalements</h2>
+    <p>L’application propose deux manières distinctes de signaler quelque chose. Elles ne transmettent pas les mêmes informations.</p>
+
+    <h3>5.1. Signaler une question erronée</h3>
     <p>Chaque question de l’application comporte un bouton de signalement. Lorsqu’une question est signalée, elle est immédiatement retirée des séries suivantes sur le téléphone, et les éléments suivants sont transmis au serveur de Questionne Moi :</p>
     <ul>
       <li>l’énoncé de la question et la réponse présentée comme juste ;</li>
       <li>le motif choisi parmi une liste fermée ;</li>
       <li>l’identifiant technique du compte, qui n’est pas l’adresse mail.</li>
     </ul>
-    <p>L’adresse mail n’est pas transmise. Ces éléments servent uniquement à repérer les questions mal formulées et à améliorer la qualité des exercices.</p>
+    <p>Pour ce signalement, l’adresse mail n’est pas transmise. Ces éléments servent uniquement à repérer les questions mal formulées et à améliorer la qualité des exercices.</p>
+
+    <h3>5.2. Signaler un problème rencontré dans l’application</h3>
+    <p>L’application comporte par ailleurs un formulaire permettant de décrire librement un problème rencontré. Son envoi déclenche un courriel adressé à Questionne Moi, qui contient :</p>
+    <ul>
+      <li><strong>le message rédigé par l’utilisateur</strong>, dans ses propres termes ;</li>
+      <li><strong>des informations techniques</strong> : la version de l’application, la marque et le modèle de l’appareil, la version d’Android, et le cas échéant le message de la dernière erreur rencontrée par l’application ainsi que sa date ;</li>
+      <li><strong>le début de l’identifiant technique du compte</strong>, qui permet de rattacher le signalement à un compte sans faire apparaître l’adresse mail ;</li>
+      <li><strong>l’adresse mail du compte, uniquement lorsque l’utilisateur demande une réponse</strong>. S’il ne demande pas de réponse, son adresse n’est pas transmise.</li>
+    </ul>
+    <p>Ces informations servent uniquement à comprendre et corriger le problème signalé, puis à répondre à l’utilisateur lorsqu’il l’a demandé. Le message étant rédigé librement, il est recommandé de n’y faire figurer aucune information personnelle qui ne serait pas nécessaire à la description du problème.</p>
 
     <h2>6. Finalités du traitement</h2>
     <p>Les données sont utilisées pour :</p>
@@ -392,6 +405,7 @@ li + li { margin-top: .45rem; }
       <li>lire les photos de cours à la demande de l’utilisateur ;</li>
       <li>fournir les fonctions de révision demandées ;</li>
       <li>traiter les signalements de questions erronées ;</li>
+      <li>traiter les problèmes signalés depuis l’application et, lorsque l’utilisateur le demande, lui répondre ;</li>
       <li>permettre la suppression du compte et traiter les demandes relatives aux droits des utilisateurs.</li>
     </ul>
     <p>Questionne Moi ne revend pas les données personnelles de ses utilisateurs.</p>
@@ -401,19 +415,23 @@ li + li { margin-top: .45rem; }
     <ul>
       <li><strong>Anthropic</strong>, États-Unis : lecture des photos de cours afin d’en extraire le texte, puis fabrication des exercices de révision (QCM, textes à trous, cartes, version audio) à partir de ce texte ;</li>
       <li><strong>Supabase</strong> : gestion technique des comptes et des données de compte ;</li>
-      <li><strong>Cloudflare</strong> : serveur intermédiaire utilisé pour le fonctionnement du service et hébergement du présent site.</li>
+      <li><strong>Cloudflare</strong> : serveur intermédiaire utilisé pour le fonctionnement du service et hébergement du présent site ;</li>
+      <li><strong>Resend</strong> : envoi des courriels, c’est-à-dire les codes de connexion à usage unique et la transmission des problèmes signalés depuis l’application ;</li>
+      <li><strong>Google</strong> : réception et conservation, dans la messagerie Gmail de Questionne Moi, des courriels adressés à l’adresse de contact, y compris les problèmes signalés depuis l’application.</li>
     </ul>
     <p>Ces prestataires traitent les données pour fournir leurs services techniques à Questionne Moi, dans la limite de ce qui est nécessaire à leur mission.</p>
 
     <h2>8. Transferts hors de l’Union européenne</h2>
     <p>Les photos de cours, ainsi que le texte des cours lorsque des exercices sont fabriqués, sont traités aux États-Unis par Anthropic. Ce transfert hors de l’Union européenne est encadré par les <strong>clauses contractuelles types</strong> prévues pour les transferts de données personnelles.</p>
     <p>Les photos sont utilisées pour la lecture demandée et ne sont pas conservées comme fichiers par Questionne Moi sur un serveur.</p>
+    <p>Les prestataires de messagerie utilisés pour l’envoi et la réception des courriels, Resend et Google, sont également susceptibles de traiter ces données aux États-Unis, dans le même cadre contractuel.</p>
 
     <h2>9. Durées de conservation</h2>
     <ul>
       <li>Le <strong>compte</strong> est conservé tant que l’utilisateur ne le supprime pas.</li>
       <li>La <strong>date de naissance</strong> n’est pas conservée après le contrôle d’âge.</li>
       <li>Les <strong>signalements de questions</strong> sont conservés quelques jours dans les journaux techniques du serveur, puis effacés automatiquement.</li>
+      <li>Les <strong>problèmes signalés depuis l’application</strong> sont reçus sous forme de courriels. Ils sont conservés dans la messagerie de Questionne Moi le temps de traiter le problème, et au plus douze mois, puis supprimés.</li>
       <li>Les <strong>photos de cours</strong> ne sont pas conservées sur un serveur et sont effacées du téléphone dès que leur lecture a réussi.</li>
       <li>Le <strong>texte transcrit, les questions et les statistiques</strong> restent sur l’appareil de l’utilisateur jusqu’à leur suppression locale ou à la suppression de l’application.</li>
     </ul>
@@ -446,7 +464,7 @@ li + li { margin-top: .45rem; }
 
     <h2>15. Mise à jour de la politique</h2>
     <p>Cette politique pourra évoluer si le fonctionnement de l’application, les prestataires ou les obligations applicables changent.</p>
-    <p>Dernière mise à jour : 21 septembre 2026.</p>
+    <p>Dernière mise à jour : 1er octobre 2026.</p>
   </article>
 </main>
 
