@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#072D42">
-  <meta name="robots" content="index,follow">
-  <title>Supprimer son compte | Questionne Moi</title>
-  <meta name="description" content="Comment supprimer son compte Questionne Moi et les données associées, depuis l'application ou par mail.">
-  <link rel="canonical" href="https://www.questionnemoi.com/suppression-compte.html">
+  <title>Questionne Moi, réviser en se faisant interroger</title>
+  <meta name="description" content="Application mobile de révision. On photographie ses notes de cours, et Questionne Moi en tire un QCM, un texte à trous, des cartes de révision ou une version audio.">
+  <link rel="canonical" href="https://www.questionnemoi.com/">
   <link rel="icon" href="assets/logo.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Questionne Moi">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="Supprimer son compte | Questionne Moi">
-  <meta property="og:description" content="Comment supprimer son compte Questionne Moi et les données associées, depuis l'application ou par mail.">
-  <meta property="og:url" content="https://www.questionnemoi.com/suppression-compte.html">
+  <meta property="og:title" content="Questionne Moi, réviser en se faisant interroger">
+  <meta property="og:description" content="Application mobile de révision. On photographie ses notes de cours, et Questionne Moi en tire un QCM, un texte à trous, des cartes de révision ou une version audio.">
+  <meta property="og:url" content="https://www.questionnemoi.com/">
   <meta property="og:image" content="https://www.questionnemoi.com/assets/partage.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <script>document.documentElement.classList.add('js');</script>
   <style>
 
 :root {
@@ -30,13 +30,20 @@
   --white: #FFFFFF;
   --muted: #3E5968;
   --line: #C8D7E0;
+  --shadow: 0 1rem 2.5rem rgba(7, 45, 66, 0.10);
+  --shadow-soft: 0 .5rem 1.5rem rgba(7, 45, 66, 0.08);
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: .75rem;
   --content: 72rem;
-  --reading: 48rem;
 }
 
 * { box-sizing: border-box; }
 
-html { background: var(--paper); }
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
+}
 
 body {
   margin: 0;
@@ -44,7 +51,8 @@ body {
   background: var(--paper);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -57,7 +65,12 @@ a {
 
 a:hover { color: var(--blue-deep); }
 
-a:focus-visible {
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
   outline: .1875rem solid var(--white);
   outline-offset: .1875rem;
   box-shadow: 0 0 0 .375rem var(--blue);
@@ -74,6 +87,7 @@ a:focus-visible {
   color: var(--white);
   background: var(--ink);
   transform: translateY(-180%);
+  transition: transform 180ms ease;
 }
 
 .skip-link:focus { transform: translateY(0); }
@@ -84,6 +98,8 @@ a:focus-visible {
 }
 
 .site-header {
+  position: relative;
+  z-index: 20;
   background: var(--white);
   border-bottom: .0625rem solid var(--line);
 }
@@ -112,6 +128,7 @@ a:focus-visible {
   height: 3.25rem;
   border-radius: .8rem;
   object-fit: cover;
+  box-shadow: 0 .35rem 1rem rgba(7, 45, 66, .13);
 }
 
 .brand-name { font-size: 1.08rem; }
@@ -132,85 +149,531 @@ a:focus-visible {
   font-weight: 700;
   text-decoration: none;
   border-bottom: .125rem solid transparent;
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .site-nav a:hover {
   color: var(--blue);
   border-bottom-color: var(--gold);
+  transform: translateY(-.06rem);
 }
 
-.legal-shell {
-  padding-block: 3.5rem 5rem;
+main { overflow: clip; }
+
+.hero {
+  position: relative;
+  padding-block: clamp(4rem, 9vw, 7.5rem);
 }
 
-.legal-document {
-  width: min(100%, var(--reading));
-  margin-inline: auto;
-  padding: clamp(1.2rem, 4vw, 2.8rem);
-  background: var(--white);
-  border: .0625rem solid var(--line);
-  border-radius: 1.25rem;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: -6rem;
+  inset-block-start: 2rem;
+  width: 16rem;
+  height: 16rem;
+  border: .125rem solid rgba(240, 180, 41, .75);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.legal-kicker {
-  margin: 0 0 .7rem;
+.hero-grid {
+  position: relative;
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 .8rem;
   color: var(--blue);
-  font-size: .82rem;
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
+  font-size: .82rem;
 }
 
 h1, h2, h3 {
+  margin-block-start: 0;
   color: var(--ink);
-  line-height: 1.2;
-  letter-spacing: -.025em;
+  line-height: 1.12;
+  letter-spacing: -.035em;
 }
 
 h1 {
-  margin: 0 0 .9rem;
-  font-size: clamp(2.1rem, 6vw, 3.3rem);
+  max-width: 12ch;
+  margin-block-end: 1.2rem;
+  font-size: clamp(2.7rem, 8vw, 5.3rem);
+  font-weight: 850;
 }
 
-h2 {
-  margin: 2.6rem 0 .8rem;
-  padding-top: .6rem;
-  border-top: .0625rem solid var(--line);
-  font-size: 1.55rem;
+.hero-copy {
+  max-width: 40rem;
+  margin: 0 0 1.7rem;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2.8vw, 1.32rem);
 }
 
-h3 {
-  margin: 1.6rem 0 .55rem;
-  font-size: 1.15rem;
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
-p, ul { margin-top: 0; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: .85rem 1.25rem;
+  border: .0625rem solid var(--blue);
+  border-radius: .8rem;
+  color: var(--white);
+  background: var(--blue);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
 
-ul { padding-left: 1.35rem; }
+.button:hover {
+  color: var(--white);
+  background: var(--blue-deep);
+  transform: translateY(-.12rem);
+  box-shadow: 0 .8rem 1.8rem rgba(7, 45, 66, .16);
+}
 
-li + li { margin-top: .45rem; }
+.button[disabled] {
+  opacity: 1;
+  cursor: not-allowed;
+  background: #315D73;
+  border-color: #315D73;
+  box-shadow: none;
+  transform: none;
+}
 
-.lead {
+.cta-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: .93rem;
+}
+
+.hero-card {
+  position: relative;
+  max-width: 28rem;
+  margin-inline: auto;
+  padding: 1.2rem;
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: .7rem;
+  border: .0625rem solid rgba(240, 180, 41, .75);
+  border-radius: 1.55rem;
+  pointer-events: none;
+}
+
+.app-preview {
+  position: relative;
+  padding: 2.2rem 1.2rem 1.5rem;
+  background: linear-gradient(180deg, #F8FBFD 0%, #EEF4F7 100%);
+  border-radius: 1.25rem;
+}
+
+.preview-top {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: 1.4rem;
+}
+
+.preview-top img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
+
+.preview-title {
+  margin: 0;
+  font-weight: 850;
+  font-size: 1.1rem;
+}
+
+.preview-subtitle {
+  margin: .2rem 0 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.preview-card {
+  margin-top: .85rem;
+  padding: 1rem;
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: 1rem;
+}
+
+.preview-label {
+  margin: 0 0 .45rem;
+  color: var(--blue);
+  font-size: .8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.preview-card p:last-child { margin-bottom: 0; }
+
+.section {
+  padding-block: clamp(4.3rem, 9vw, 7rem);
+}
+
+.section-white { background: var(--white); }
+
+.section-heading {
+  max-width: 44rem;
+  margin-bottom: 2.3rem;
+}
+
+.section-heading h2 {
+  margin-bottom: .8rem;
+  font-size: clamp(2rem, 5vw, 3.35rem);
+}
+
+.section-heading p {
+  margin: 0;
   color: var(--muted);
   font-size: 1.08rem;
 }
 
-.placeholder {
-  display: inline-block;
-  padding: .08rem .35rem;
-  border: .0625rem dashed #8EAAB9;
-  border-radius: .3rem;
-  color: var(--ink);
-  background: #F5F9FB;
-  font-weight: 750;
+.steps,
+.mode-grid {
+  display: grid;
+  gap: 1rem;
 }
 
-.note {
-  padding: 1rem 1.1rem;
-  color: var(--ink);
-  background: #F5F9FB;
-  border-left: .22rem solid var(--gold);
+.step,
+.mode-card,
+.reason-card {
+  position: relative;
+  padding: 1.35rem;
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
+
+.step:hover,
+.mode-card:hover,
+.reason-card:hover {
+  transform: translateY(-.2rem);
+  box-shadow: 0 .9rem 2rem rgba(7, 45, 66, .12);
+  border-color: #9CB6C5;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-bottom: 1rem;
+  border: .125rem solid var(--gold);
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--white);
+  font-weight: 850;
+}
+
+.icon-wrap {
+  display: inline-grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  margin-bottom: 1rem;
+  border: .0625rem solid var(--line);
+  border-radius: .85rem;
+  color: var(--blue);
+  background: #F7FAFC;
+}
+
+.icon-wrap svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.step h3,
+.mode-card h3,
+.reason-card h3 {
+  margin-bottom: .55rem;
+  font-size: 1.25rem;
+}
+
+.step p,
+.mode-card p,
+.reason-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.why {
+  position: relative;
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.why .container {
+  width: min(calc(100% - 2rem), 62rem);
+}
+
+.why .eyebrow { color: #DDE9EF; }
+
+.why h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--white);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+}
+
+.why h2::after {
+  content: "";
+  display: block;
+  width: 7rem;
+  height: .18rem;
+  margin-top: .7rem;
+  background: var(--gold);
+  transform-origin: left center;
+}
+
+.js .why:not(.is-visible) h2::after {
+  transform: scaleX(0);
+}
+
+.js .why.is-visible h2::after {
+  transform: scaleX(1);
+  transition: transform 520ms ease 120ms;
+}
+
+.why-copy {
+  display: grid;
+  gap: 1.3rem;
+  max-width: 50rem;
+}
+
+.why-copy p {
+  margin: 0;
+  color: #EAF1F5;
+  font-size: clamp(1.08rem, 2.4vw, 1.3rem);
+}
+
+.editor-placeholder {
+  display: inline-block;
+  margin-inline-start: .25rem;
+  padding: .08rem .35rem;
+  border: .0625rem dashed #B9CDD8;
+  border-radius: .35rem;
+  color: #FFFFFF;
+  font-size: .9em;
+}
+
+.modes-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mode-card {
+  overflow: hidden;
+}
+
+.mode-card::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: .22rem;
+  background: var(--gold);
+}
+
+.memory {
+  background: #DDE9EF;
+}
+
+.memory .section-heading {
+  margin-bottom: 1.6rem;
+}
+
+.reason-list {
+  display: grid;
+  gap: .85rem;
+}
+
+.reason-card {
+  box-shadow: none;
+}
+
+.reason-card h3 {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+
+.reason-dot {
+  flex: 0 0 auto;
+  width: .65rem;
+  height: .65rem;
+  border: .125rem solid var(--gold);
+  border-radius: 50%;
+}
+
+.data-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.data-panel {
+  padding: 1.4rem;
+  background: #F6FAFC;
+  border: .0625rem solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.data-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.data-list li {
+  display: grid;
+  grid-template-columns: 2.3rem 1fr;
+  gap: .8rem;
+  align-items: start;
+}
+
+.data-check {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: .125rem solid var(--gold);
+  border-radius: 50%;
+  color: var(--blue);
+}
+
+.data-check svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.data-list strong {
+  display: block;
+  margin-bottom: .15rem;
+}
+
+.data-list span {
+  color: var(--muted);
+}
+
+.data-note {
+  padding: 1.35rem;
+  color: var(--white);
+  background: var(--ink);
+  border-radius: var(--radius-md);
+}
+
+.data-note h3 { color: var(--white); }
+
+.data-note p {
+  margin-bottom: 1rem;
+  color: #DDE9EF;
+}
+
+.data-note a {
+  color: var(--white);
+  font-weight: 800;
+}
+
+.data-note a:hover { color: var(--paper); }
+
+.faq-list {
+  display: grid;
+  gap: .75rem;
+}
+
+.faq-item {
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: .9rem;
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.faq-item:hover {
+  border-color: #9CB6C5;
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question:hover { background: #F8FBFD; }
+
+.faq-question svg {
+  flex: 0 0 auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--blue);
+  transition: transform 180ms ease;
+}
+
+.faq-question[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  height: 0;
+  overflow: hidden;
+  transition: height 220ms ease;
+}
+
+.faq-answer-inner {
+  padding: 0 1.1rem 1.1rem;
+  color: var(--muted);
+}
+
+.faq-answer-inner p { margin: 0; }
 
 .site-footer {
   color: #EAF1F5;
@@ -247,9 +710,39 @@ li + li { margin-top: .45rem; }
 .site-footer a {
   color: var(--white);
   font-weight: 700;
+  transition: color 180ms ease, transform 180ms ease;
 }
 
-.site-footer a:hover { color: var(--paper); }
+.site-footer a:hover {
+  color: var(--paper);
+  transform: translateY(-.06rem);
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.js .why-copy p {
+  opacity: 0;
+  transform: translateY(.8rem);
+}
+
+.js .why.is-visible .why-copy p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.js .why.is-visible .why-copy p:nth-child(1) { transition-delay: 140ms; }
+.js .why.is-visible .why-copy p:nth-child(2) { transition-delay: 250ms; }
+.js .why.is-visible .why-copy p:nth-child(3) { transition-delay: 360ms; }
 
 @media (min-width: 42rem) {
   .container { width: min(calc(100% - 3rem), var(--content)); }
@@ -260,70 +753,45 @@ li + li { margin-top: .45rem; }
     justify-content: space-between;
   }
 
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, .85fr);
+  }
+
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reason-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .data-grid { grid-template-columns: minmax(0, 1.4fr) minmax(16rem, .6fr); }
+
   .footer-inner {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
   }
 }
 
-@media print {
-  :root {
-    --paper: #FFFFFF;
-    --white: #FFFFFF;
-    --ink: #000000;
-    --muted: #222222;
-    --line: #B8B8B8;
+@media (min-width: 68rem) {
+  .mode-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 
-  body {
-    background: #FFFFFF;
-    color: #000000;
+  .js .reveal,
+  .js .why-copy p,
+  .js .why:not(.is-visible) h2::after {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
-  .skip-link,
-  .site-nav {
-    display: none;
+  .faq-answer {
+    transition: none !important;
   }
-
-  .site-header {
-    border-bottom: .0625rem solid #B8B8B8;
-  }
-
-  .brand img {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .legal-shell { padding-block: 1rem; }
-
-  .legal-document {
-    width: 100%;
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-  }
-
-  .site-footer {
-    margin-top: 2rem;
-    color: #000000;
-    background: #FFFFFF;
-    border-top: .125rem solid #000000;
-  }
-
-  .footer-brand,
-  .footer-meta,
-  .site-footer a {
-    color: #000000;
-  }
-
-  a { color: #000000; }
-
-  h2 {
-    break-after: avoid;
-    border-top-color: #666666;
-  }
-
-  p, li { orphans: 3; widows: 3; }
 }
 
   </style>
@@ -348,46 +816,296 @@ li + li { margin-top: .45rem; }
   </div>
 </header>
 
-<main id="contenu" class="legal-shell">
-  <article class="legal-document">
-    <h1>Supprimer son compte Questionne&nbsp;Moi</h1>
-    <p class="lead">Questionne Moi est édité par Claire Papetti, entreprise individuelle, RCS Nice 889 981 213. Cette page explique comment demander la suppression de son compte et des données associées.</p>
+<main id="contenu">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div>
+        <h1 id="hero-title">Vos notes deviennent des questions.</h1>
+        <p class="hero-copy">Photographiez votre cours, choisissez votre façon de réviser, puis laissez l’application vous interroger sur ce que vous avez réellement écrit.</p>
+        <div class="cta-row">
+          <button class="button" type="button" disabled aria-disabled="true">Bientôt sur Google Play</button>
+          <p class="cta-note">La version Android est en préparation.</p>
+        </div>
+      </div>
 
-    <h2>1. Depuis l’application, en deux touches</h2>
-    <p>C’est la méthode la plus rapide, et la suppression est immédiate.</p>
-    <ul>
-      <li>Ouvrir l’application Questionne Moi.</li>
-      <li>Aller dans l’onglet <strong>Profil</strong>, en bas de l’écran.</li>
-      <li>Appuyer sur <strong>Supprimer mon compte</strong>, en bas de la page.</li>
-      <li>Confirmer deux fois. La seconde confirmation déclenche l’effacement.</li>
-    </ul>
-    <p class="note">La suppression est définitive et immédiate. Il n’existe aucun moyen de revenir en arrière, ni de récupérer les cours enregistrés.</p>
+      <div class="hero-card" aria-label="Aperçu du fonctionnement de Questionne Moi">
+        <div class="app-preview">
+          <div class="preview-top">
+            <img src="assets/logo.png" alt="Logo Questionne Moi">
+            <div>
+              <p class="preview-title">Questionne Moi</p>
+              <p class="preview-subtitle">À partir de vos propres notes.</p>
+            </div>
+          </div>
+          <div class="preview-card">
+            <p class="preview-label">Cours lu</p>
+            <p>Votre texte est prêt. Choisissez maintenant comment vous voulez le travailler.</p>
+          </div>
+          <div class="preview-card">
+            <p class="preview-label">Mode de révision</p>
+            <p>QCM · Texte à trous · Cartes · Audio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>2. Par courrier électronique</h2>
-    <p>Si l’application n’est plus installée, ou si l’accès au compte est impossible, écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a> en demandant la suppression du compte.</p>
-    <p>Envoyez le message <strong>depuis l’adresse mail du compte concerné</strong> : c’est ce qui permet de vérifier qu’il s’agit bien du vôtre, sans avoir à demander d’autres justificatifs. La demande est traitée dans un délai maximum d’un mois.</p>
+  <section class="section section-white" id="fonctionnement" aria-labelledby="fonctionnement-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="fonctionnement-title">Trois étapes, pas de fiche à refaire.</h2>
+        <p>Questionne Moi part du cours que vous avez déjà. L’objectif est de réduire la préparation pour garder du temps à l’entraînement.</p>
+      </div>
 
-    <h2>3. Ce qui est supprimé</h2>
-    <ul>
-      <li>Le compte lui-même, ainsi que l’adresse mail qui lui est associée.</li>
-      <li>Le pseudo, s’il a été renseigné.</li>
-      <li>La mention indiquant que la condition d’âge a été vérifiée.</li>
-      <li>Sur le téléphone : les cours enregistrés, les textes transcrits, les questions, les cartes de révision, les chapitres audio, les statistiques, la série de jours consécutifs et les réglages.</li>
-      <li>Sur le téléphone toujours : les éventuelles copies de photos restées dans le cache de l’application.</li>
-    </ul>
+      <div class="steps">
+        <article class="step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <h3>Photographiez votre cours</h3>
+          <p>L’application lit vos notes et en extrait le texte utile à la révision.</p>
+        </article>
 
-    <h2>4. Ce qui n’est pas conservé, et n’a donc pas à être supprimé</h2>
-    <p>Les photos de cours ne sont stockées sur aucun serveur de Questionne Moi. Elles sont transmises pour être lues, puis effacées du téléphone dès que la lecture a réussi.</p>
-    <p>Le texte des cours, les questions et les statistiques ne sont pas stockés en ligne : ils vivent uniquement sur le téléphone.</p>
+        <article class="step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h3>Choisissez votre mode</h3>
+          <p>QCM, texte à trous, cartes en répétition espacée ou écoute audio : à vous de choisir selon le moment.</p>
+        </article>
 
-    <h2>5. Ce qui subsiste temporairement</h2>
-    <p>Les journaux techniques du serveur, utilisés pour diagnostiquer les pannes, sont conservés quelques jours puis effacés automatiquement. Ils peuvent contenir l’identifiant technique d’un compte supprimé, mais pas son adresse mail.</p>
-    <p>Si une question erronée a été signalée depuis le compte, le signalement suit la même durée : quelques jours dans ces journaux, sans adresse mail.</p>
-    <p>Aucune autre donnée n’est conservée après la suppression du compte.</p>
+        <article class="step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h3>Faites-vous interroger</h3>
+          <p>Vous voyez ce que vous savez déjà, ce qui manque encore, et ce qui doit revenir plus vite.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <h2>6. En savoir plus</h2>
-    <p>Le détail des données traitées, de leur finalité et de leur durée de conservation figure dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
-  </article>
+  <section class="section why" id="pourquoi" aria-labelledby="pourquoi-title">
+    <div class="container">
+      <h2 id="pourquoi-title">Pourquoi Questionne Moi existe</h2>
+      <div class="why-copy">
+        <p>J’ai beaucoup révisé, et aujourd’hui encore, en préparant l’agrégation, je retrouve le même problème : on peut relire un cours plusieurs fois sans savoir ce qu’on en a vraiment retenu. Ce qui aide, c’est d’être interrogé. C’est souvent en me faisant réciter mes cours que j’ai vu ce qui me manquait.</p>
+        <p>Questionne Moi part de cette idée. On prend en photo ses notes de cours, et l’application en tire des exercices sur ce contenu précis, ou une version audio au ton calme à écouter dans les transports ou le soir. On révise à partir de son propre travail, avec ses propres mots.</p>
+        <p>Je pense qu’on apprend en se posant des questions, et que réviser peut aussi trouver sa place dans les moments ordinaires de la journée. L’idée est simple : supprimer l’étape de fabrication des fiches pour aller directement à l’étape utile. Le temps passé à réviser sert alors à réviser.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="modes" aria-labelledby="modes-title">
+    <div class="container">
+      <div class="section-heading modes-intro">
+        <div>
+          <h2 id="modes-title">Le même cours, selon le moment et l’effort voulu.</h2>
+        </div>
+        <p>Chaque mode part du texte extrait de vos notes, pour rester centré sur le contenu que vous devez apprendre.</p>
+      </div>
+
+      <div class="mode-grid">
+        <article class="mode-card">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6.5" cy="7" r="1.5"/><path d="M10 7h8M5 12h3M10 12h8M5 17h3M10 17h8"/>
+            </svg>
+          </div>
+          <h3>QCM</h3>
+          <p>Des questions sur votre cours, avec une explication après chaque réponse pour comprendre immédiatement l’erreur.</p>
+        </article>
+
+        <article class="mode-card">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 11h6M14 11h6M4 16h4M12 16h8"/>
+            </svg>
+          </div>
+          <h3>Texte à trous</h3>
+          <p>Retrouvez le mot ou l’expression manquante. La saisie tolère les petites fautes de frappe pour rester concentrée sur le cours.</p>
+        </article>
+
+        <article class="mode-card">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="5" width="12" height="14" rx="1.5"/><path d="M8 3h11v14"/>
+            </svg>
+          </div>
+          <h3>Cartes de révision</h3>
+          <p>Les cartes reviennent selon vos réponses : plus souvent quand c’est fragile, moins souvent quand c’est acquis.</p>
+        </article>
+
+        <article class="mode-card">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 10v4M9 7v10M13 5v14M17 8v8M21 10v4"/>
+            </svg>
+          </div>
+          <h3>Version audio</h3>
+          <p>Votre cours est découpé en chapitres pour l’écoute, avec un mode nuit à voix ralentie et fond sonore.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section memory" id="pourquoi-exercices" aria-labelledby="pourquoi-exercices-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="pourquoi-exercices-title">Chaque format demande un effort différent à la mémoire.</h2>
+      </div>
+
+      <div class="reason-list">
+        <article class="reason-card">
+          <h3><span class="reason-dot" aria-hidden="true"></span>QCM</h3>
+          <p>Se tester oblige à chercher la réponse ; l’explication qui suit permet qu’une erreur devienne immédiatement une occasion d’apprendre.</p>
+        </article>
+
+        <article class="reason-card">
+          <h3><span class="reason-dot" aria-hidden="true"></span>Texte à trous</h3>
+          <p>Retrouver un mot sans propositions demande un rappel plus profond que reconnaître une bonne réponse parmi plusieurs choix.</p>
+        </article>
+
+        <article class="reason-card">
+          <h3><span class="reason-dot" aria-hidden="true"></span>Cartes espacées</h3>
+          <p>Ce qui est encore fragile revient vite, ce qui est bien acquis revient moins souvent, pour concentrer le temps de révision là où il sert.</p>
+        </article>
+
+        <article class="reason-card">
+          <h3><span class="reason-dot" aria-hidden="true"></span>Audio</h3>
+          <p>Le cours reste disponible dans les transports ou le soir, avec un mode nuit pensé pour les moments où lire n’est plus pratique.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="donnees" aria-labelledby="donnees-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="donnees-title">Le minimum nécessaire, et pas davantage.</h2>
+        <p>Le fonctionnement a été pensé pour que le contenu de révision reste principalement sur votre téléphone.</p>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-panel">
+          <ul class="data-list">
+            <li>
+              <span class="data-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg>
+              </span>
+              <div><strong>Les photos ne sont pas conservées.</strong><span>Elles sont transmises pour être lues, puis effacées du téléphone dès que la lecture a réussi.</span></div>
+            </li>
+            <li>
+              <span class="data-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg>
+              </span>
+              <div><strong>Le contenu de révision reste sur le téléphone.</strong><span>Le texte transcrit, les questions et les statistiques de révision sont conservés localement sur l’appareil de l’élève.</span></div>
+            </li>
+            <li>
+              <span class="data-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg>
+              </span>
+              <div><strong>Aucune revente de données.</strong><span>Questionne Moi ne revend pas les données personnelles de ses utilisateurs.</span></div>
+            </li>
+            <li>
+              <span class="data-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg>
+              </span>
+              <div><strong>Suppression du compte depuis l’application.</strong><span>L’utilisateur peut demander l’effacement réel de son compte directement dans l’application.</span></div>
+            </li>
+            <li>
+              <span class="data-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"/></svg>
+              </span>
+              <div><strong>Âge minimum : 15 ans.</strong><span>La date de naissance sert uniquement à vérifier cette condition et n’est pas conservée.</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="data-note" aria-label="En savoir plus sur les données personnelles">
+          <h3>En détail</h3>
+          <p>La politique de confidentialité explique quelles données sont traitées, par quels prestataires, pendant combien de temps et comment exercer vos droits.</p>
+          <a href="confidentialite.html">Lire la politique de confidentialité</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="faq-title">Avant de commencer.</h2>
+      </div>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              Quand l’application sera-t-elle disponible ?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+            <div class="faq-answer-inner"><p>Questionne Moi est en préparation pour Android. Le bouton Google Play sera activé lorsque la fiche de l’application sera disponible.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              Est-ce que mes photos de cours sont conservées ?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+            <div class="faq-answer-inner"><p>Non. Elles sont transmises uniquement pour être lues, ne sont pas conservées sur un serveur et sont effacées du téléphone dès que la lecture a réussi.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              Où sont stockés mes cours et mes résultats ?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+            <div class="faq-answer-inner"><p>Le texte transcrit, les questions générées et vos statistiques de révision restent sur votre téléphone. Les données de compte sont traitées séparément pour permettre la connexion.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              Est-ce que Questionne Moi peut remplacer mon cours ou mon enseignant ?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+            <div class="faq-answer-inner"><p>Non. Le contenu est généré automatiquement et peut comporter des erreurs. Il faut toujours vérifier une réponse importante dans son cours et, si besoin, auprès de son enseignant.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              Puis-je utiliser n’importe quel document ?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+            <div class="faq-answer-inner"><p>Vous pouvez importer des documents que vous avez le droit de photographier et d’utiliser. L’usage des cours dans Questionne Moi doit rester personnel et privé.</p></div>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              Pourquoi faut-il avoir au moins 15 ans ?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+            <div class="faq-answer-inner"><p>Questionne Moi fixe l’âge minimum à 15 ans pour tenir compte du cadre français applicable à l’utilisation de services numériques par les mineurs. La date de naissance n’est pas conservée : seul le résultat du contrôle d’âge l’est.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -408,5 +1126,81 @@ li + li { margin-top: .45rem; }
   </div>
 </footer>
 
+
+<script>
+(function () {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealItems = document.querySelectorAll('.reveal, .why');
+
+  if (!reducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+  }
+
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach((button) => {
+    const panel = document.getElementById(button.getAttribute('aria-controls'));
+
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        button.setAttribute('aria-expanded', 'false');
+
+        if (reducedMotion) {
+          panel.hidden = true;
+          panel.style.height = '';
+          return;
+        }
+
+        const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        panel.style.height = (panel.scrollHeight / rootSize) + 'rem';
+        requestAnimationFrame(() => {
+          panel.style.height = '0';
+        });
+
+        const onClose = () => {
+          panel.hidden = true;
+          panel.style.height = '';
+          panel.removeEventListener('transitionend', onClose);
+        };
+        panel.addEventListener('transitionend', onClose);
+      } else {
+        button.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+
+        if (reducedMotion) {
+          panel.style.height = 'auto';
+          return;
+        }
+
+        panel.style.height = '0';
+        requestAnimationFrame(() => {
+          const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        panel.style.height = (panel.scrollHeight / rootSize) + 'rem';
+        });
+
+        const onOpen = () => {
+          panel.style.height = 'auto';
+          panel.removeEventListener('transitionend', onOpen);
+        };
+        panel.addEventListener('transitionend', onOpen);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
