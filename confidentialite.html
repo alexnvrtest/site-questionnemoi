@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -371,9 +372,10 @@ li + li { margin-top: .45rem; }
     <p>Lorsque l’utilisateur photographie des notes de cours, les images sont transmises uniquement afin d’en lire le contenu. Elles ne sont pas conservées sur un serveur par Questionne Moi.</p>
     <p>Une fois la lecture réussie, les photos sont également effacées du téléphone par l’application. Le traitement des images sert uniquement à produire le texte nécessaire à la création des exercices de révision.</p>
 
-    <h2>4. Données qui restent sur le téléphone</h2>
-    <p>Le <strong>texte transcrit</strong>, les <strong>questions générées</strong> et les <strong>statistiques de révision</strong> restent sur le téléphone de l’élève. Ils ne sont pas stockés dans le compte en ligne Questionne Moi.</p>
-    <p>La suppression de l’application ou la perte de l’appareil peut donc entraîner la perte de ces données locales si aucune fonction de sauvegarde distincte n’est mise en place.</p>
+    <h2>4. Données de révision et sauvegarde</h2>
+    <p>Le <strong>texte transcrit</strong>, les <strong>questions générées</strong>, les <strong>statistiques de révision</strong> et les <strong>réglages de révision</strong> sont enregistrés sur le téléphone, puis sauvegardés sur le compte de l’utilisateur.</p>
+    <p>Cette sauvegarde permet de les retrouver après une réinstallation ou sur un autre téléphone, en se reconnectant. L’application fonctionne sans connexion ; les changements sont envoyés au serveur au retour du réseau.</p>
+    <p>À la déconnexion, ces données sont retirées du téléphone et restent disponibles sur le compte. <strong>Les photos ne sont jamais sauvegardées.</strong></p>
 
     <h2>5. Signalements</h2>
     <p>L’application propose deux manières distinctes de signaler quelque chose. Elles ne transmettent pas les mêmes informations.</p>
@@ -397,16 +399,23 @@ li + li { margin-top: .45rem; }
     </ul>
     <p>Ces informations servent uniquement à comprendre et corriger le problème signalé, puis à répondre à l’utilisateur lorsqu’il l’a demandé. Le message étant rédigé librement, il est recommandé de n’y faire figurer aucune information personnelle qui ne serait pas nécessaire à la description du problème.</p>
 
-    <h2>6. Finalités du traitement</h2>
+    <h2>6. Finalités et bases légales du traitement</h2>
     <p>Les données sont utilisées pour :</p>
     <ul>
       <li>créer et sécuriser l’accès au compte ;</li>
       <li>vérifier la condition d’âge minimum ;</li>
       <li>lire les photos de cours à la demande de l’utilisateur ;</li>
       <li>fournir les fonctions de révision demandées ;</li>
+      <li>sauvegarder les données de révision sur le compte, pour permettre de les retrouver après une réinstallation ou sur un autre appareil ;</li>
       <li>traiter les signalements de questions erronées ;</li>
       <li>traiter les problèmes signalés depuis l’application et, lorsque l’utilisateur le demande, lui répondre ;</li>
       <li>permettre la suppression du compte et traiter les demandes relatives aux droits des utilisateurs.</li>
+    </ul>
+    <p>Ces traitements reposent sur les bases légales suivantes :</p>
+    <ul>
+      <li><strong>l’exécution du contrat</strong> (les conditions générales d’utilisation acceptées à l’inscription) pour la création du compte, la lecture des photos, les fonctions de révision, la sauvegarde des données de révision et la suppression du compte ;</li>
+      <li><strong>l’intérêt légitime</strong> de Questionne Moi à assurer la qualité et la sécurité du service, pour le traitement des signalements, la limitation de l’usage quotidien et la vérification de l’âge minimum ;</li>
+      <li><strong>le respect des obligations légales</strong>, pour le traitement des demandes d’exercice des droits.</li>
     </ul>
     <p>Questionne Moi ne revend pas les données personnelles de ses utilisateurs.</p>
 
@@ -414,7 +423,7 @@ li + li { margin-top: .45rem; }
     <p>Questionne Moi fait appel aux prestataires suivants, uniquement pour les besoins techniques décrits ci-dessous :</p>
     <ul>
       <li><strong>Anthropic</strong>, États-Unis : lecture des photos de cours afin d’en extraire le texte, puis fabrication des exercices de révision (QCM, textes à trous, cartes, version audio) à partir de ce texte ;</li>
-      <li><strong>Supabase</strong> : gestion technique des comptes et des données de compte ;</li>
+      <li><strong>Supabase</strong>, hébergement dans l’Union européenne (Irlande) : gestion des comptes et sauvegarde des données de révision (texte des cours, questions, statistiques, réglages) ;</li>
       <li><strong>Cloudflare</strong> : serveur intermédiaire utilisé pour le fonctionnement du service, acheminement par courriel des problèmes signalés depuis l’application, et hébergement du présent site ;</li>
       <li><strong>Resend</strong> : envoi des courriels contenant les codes de connexion à usage unique ;</li>
       <li><strong>Google</strong> : réception et conservation, dans la messagerie Gmail de Questionne Moi, des courriels adressés à l’adresse de contact, y compris les problèmes signalés depuis l’application.</li>
@@ -424,21 +433,24 @@ li + li { margin-top: .45rem; }
     <h2>8. Transferts hors de l’Union européenne</h2>
     <p>Les photos de cours, ainsi que le texte des cours lorsque des exercices sont fabriqués, sont traités aux États-Unis par Anthropic. Ce transfert hors de l’Union européenne est encadré par les <strong>clauses contractuelles types</strong> prévues pour les transferts de données personnelles.</p>
     <p>Les photos sont utilisées pour la lecture demandée et ne sont pas conservées comme fichiers par Questionne Moi sur un serveur.</p>
+    <p>Les données de compte et de révision sont hébergées par Supabase dans l’Union européenne (Irlande). Supabase étant une société établie aux États-Unis, ce traitement est encadré par les clauses contractuelles types prévues dans son contrat de sous-traitance.</p>
     <p>Les prestataires de messagerie, Resend pour l’envoi des codes de connexion, Cloudflare pour l’acheminement des problèmes signalés et Google pour la réception des courriels, sont également susceptibles de traiter ces données aux États-Unis, dans le même cadre contractuel.</p>
 
     <h2>9. Durées de conservation</h2>
     <ul>
-      <li>Le <strong>compte</strong> est conservé tant que l’utilisateur ne le supprime pas.</li>
+      <li>Le <strong>compte</strong> et les données de révision sauvegardées sont conservés tant que l’utilisateur ne supprime pas son compte. L’utilisateur peut le supprimer à tout moment depuis l’application.</li>
       <li>La <strong>date de naissance</strong> n’est pas conservée après le contrôle d’âge.</li>
       <li>Les <strong>signalements de questions</strong> sont conservés quelques jours dans les journaux techniques du serveur, puis effacés automatiquement.</li>
       <li>Les <strong>problèmes signalés depuis l’application</strong> sont reçus sous forme de courriels. Ils sont conservés dans la messagerie de Questionne Moi le temps de traiter le problème, et au plus douze mois, puis supprimés.</li>
       <li>Les <strong>photos de cours</strong> ne sont pas conservées sur un serveur et sont effacées du téléphone dès que leur lecture a réussi.</li>
-      <li>Le <strong>texte transcrit, les questions et les statistiques</strong> restent sur l’appareil de l’utilisateur jusqu’à leur suppression locale ou à la suppression de l’application.</li>
+      <li>Le <strong>texte transcrit, les questions et les statistiques</strong> sont conservés sur le compte tant qu’il existe, et sur le téléphone jusqu’à la déconnexion ou la suppression de l’application.</li>
+      <li>Les <strong>compteurs d’utilisation du jour</strong>, qui servent à limiter le nombre de demandes et de signalements par compte, ne contiennent que l’identifiant technique du compte et un nombre ; ils s’effacent automatiquement au bout de 36 heures.</li>
     </ul>
 
     <h2>10. Suppression du compte</h2>
     <p>L’utilisateur peut supprimer son compte directement depuis l’application. Cette action entraîne l’effacement réel des données de compte détenues par Questionne Moi, sous réserve des informations qu’une obligation légale imposerait exceptionnellement de conserver.</p>
-    <p>La suppression du compte efface également tout ce que l’application conserve sur le téléphone : cours, textes transcrits, questions, cartes, statistiques, réglages, ainsi que les éventuelles copies de photos restées dans le cache. Aucune donnée liée au compte ne subsiste sur l’appareil après la suppression.</p>
+    <p>La suppression du compte efface également <strong>toutes les données de révision sauvegardées en ligne</strong> : textes des cours, questions, statistiques et réglages.</p>
+    <p>Elle efface aussi tout ce que l’application conserve sur le téléphone : cours, textes transcrits, questions, cartes, statistiques, réglages, ainsi que les éventuelles copies de photos restées dans le cache. Aucune donnée liée au compte ne subsiste sur l’appareil après la suppression.</p>
     <p>Les signalements déjà envoyés ne sont pas effacés automatiquement par la suppression du compte : les signalements de questions disparaissent d’eux-mêmes des journaux techniques au bout de quelques jours, et les problèmes signalés depuis l’application restent dans la messagerie de Questionne Moi au plus douze mois. Pour qu’ils soient supprimés plus tôt, écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>.</p>
 
     <h2>11. Vos droits</h2>
@@ -458,14 +470,14 @@ li + li { margin-top: .45rem; }
     <p>En pratique, Questionne Moi demande la date de naissance une seule fois pour vérifier l’âge. La date elle-même est ensuite supprimée ; seul le fait que la condition d’âge est remplie est conservé.</p>
 
     <h2>13. Sécurité</h2>
-    <p>Questionne Moi limite la collecte aux données nécessaires au fonctionnement du service et s’appuie sur des prestataires spécialisés pour les opérations de compte, d’hébergement intermédiaire et de lecture des cours. Aucune méthode de stockage ou de transmission ne peut toutefois garantir un risque nul.</p>
+    <p>Questionne Moi limite la collecte aux données nécessaires au fonctionnement du service et s’appuie sur des prestataires spécialisés pour les opérations de compte, de sauvegarde, d’hébergement intermédiaire et de lecture des cours. Les échanges entre l’application et les serveurs sont chiffrés. Chaque utilisateur ne peut accéder qu’à ses propres données de révision sauvegardées, ce contrôle étant effectué côté serveur. L’accès d’administration à la base de données est réservé à Questionne Moi, protégé, et utilisé uniquement pour la maintenance du service ou le traitement d’une demande de l’utilisateur. Aucune méthode de stockage ou de transmission ne peut toutefois garantir un risque nul.</p>
 
     <h2>14. Cookies et traceurs sur ce site</h2>
     <p>Le présent site vitrine ne dépose aucun cookie de mesure d’audience, de publicité ou de personnalisation et ne charge aucune ressource depuis un domaine extérieur. Il ne comporte donc pas de bandeau de consentement aux cookies.</p>
 
     <h2>15. Mise à jour de la politique</h2>
     <p>Cette politique pourra évoluer si le fonctionnement de l’application, les prestataires ou les obligations applicables changent.</p>
-    <p>Dernière mise à jour : 1er octobre 2026.</p>
+    <p>Dernière mise à jour : 4 octobre 2026.</p>
   </article>
 </main>
 
