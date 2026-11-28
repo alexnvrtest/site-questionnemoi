@@ -823,6 +823,9 @@ h1 {
             <li>
               <a href="index.html#faq">Questions fréquentes</a>
             </li>
+            <li>
+              <a href="parents.html">Parents</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -834,8 +837,8 @@ h1 {
             <h1 id="hero-title">Vos notes deviennent des questions.</h1>
             <p class="hero-copy">Photographiez votre cours, choisissez votre façon de réviser, puis laissez l’application vous interroger sur ce que vous avez réellement écrit.</p>
             <div class="cta-row">
-              <button class="button" type="button" disabled aria-disabled="true">Bientôt sur Google Play</button>
-              <p class="cta-note">La version Android est en préparation.</p>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.questionnemoi.app">Télécharger sur Google Play</a>
+              <p class="cta-note">Pour Android. Gratuit à télécharger, avec des achats facultatifs dans l’application.</p>
             </div>
           </div>
           <div class="hero-card" aria-label="Aperçu du fonctionnement de Questionne Moi">
@@ -1062,6 +1065,17 @@ h1 {
                                 </svg>
                               </span>
                               <div>
+                                <strong>Les paiements passent par Google Play.</strong>
+                                <span>Questionne Moi ne voit jamais votre carte bancaire ni votre moyen de paiement : seul ce que vous avez acheté est noté sur votre compte.</span>
+                              </div>
+                            </li>
+                            <li>
+                              <span class="data-check" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M5 12l4 4L19 6"/>
+                                </svg>
+                              </span>
+                              <div>
                                 <strong>Aucune revente de données.</strong>
                                 <span>Questionne Moi ne revend pas les données personnelles de ses utilisateurs.</span>
                               </div>
@@ -1107,7 +1121,7 @@ h1 {
                         <article class="faq-item">
                           <h3>
                             <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
-                              Quand l’application sera-t-elle disponible ?
+                              Où télécharger Questionne Moi ?
                               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M6 9l6 6 6-6"/>
                               </svg>
@@ -1115,7 +1129,7 @@ h1 {
                           </h3>
                           <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
                             <div class="faq-answer-inner">
-                              <p>Questionne Moi est en préparation pour Android. Le bouton Google Play sera activé lorsque la fiche de l’application sera disponible.</p>
+                              <p>Questionne Moi est disponible sur <a href="https://play.google.com/store/apps/details?id=com.questionnemoi.app">Google Play</a>, pour les téléphones Android. Il n’existe pas encore de version pour iPhone.</p>
                             </div>
                           </div>
                         </article>
@@ -1197,7 +1211,7 @@ h1 {
                         <article class="faq-item">
                           <h3>
                             <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
-                              Combien de crédits par jour, et que permettent-ils&nbsp;?
+                              Combien ça coûte, et comment marchent les crédits&nbsp;?
                               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M6 9l6 6 6-6"/>
                               </svg>
@@ -1205,19 +1219,71 @@ h1 {
                           </h3>
                           <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden>
                             <div class="faq-answer-inner">
-                              <p>Chaque compte reçoit <strong>60&nbsp;crédits par jour</strong>, gratuitement. Ils servent quand l’intelligence artificielle travaille pour vous&nbsp;: lire vos photos, préparer vos exercices, corriger vos réponses. Tout ce qui est déjà prêt reste gratuit et sans limite&nbsp;: refaire des séries de QCM, réécouter un cours, retourner ses cartes, relire ses corrections.</p>
+                              <p>L’application est gratuite à télécharger. Les <strong>crédits</strong> servent quand l’intelligence artificielle travaille pour vous&nbsp;: lire vos photos, préparer vos exercices, corriger vos réponses. Tout ce qui est déjà prêt reste gratuit et sans limite&nbsp;: refaire des séries de QCM, réécouter un cours, retourner ses cartes, relire ses corrections.</p>
+                              <p>En arrivant, vous recevez <strong>30&nbsp;crédits offerts</strong>, qui n’expirent pas, puis <strong>3&nbsp;crédits chaque jour</strong>. Ceux du jour reviennent chaque nuit, à 1 h du matin en hiver et à 2 h en été (heure de Paris), et ne s’additionnent pas d’un jour à l’autre&nbsp;: ils sont utilisés en premier.</p>
                               <ul>
-                                <li>Lire un nouveau cours (photos)&nbsp;: 4&nbsp;crédits</li>
+                                <li>Lire un cours&nbsp;: 1&nbsp;crédit par photo, 4 au minimum</li>
                                 <li>Préparer le QCM&nbsp;: 3&nbsp;crédits, ou 6 pour un long cours, préparé en deux fois</li>
-                                <li>Préparer la version audio&nbsp;: 2&nbsp;crédits</li>
-                                <li>Préparer la carte mentale&nbsp;: 3&nbsp;crédits (et autant pour la refaire)</li>
-                                <li>Faire vérifier vos modifications de la carte mentale&nbsp;: 3&nbsp;crédits</li>
-                                <li>Préparer le texte à trous ou les cartes de révision&nbsp;: 1&nbsp;crédit chacun</li>
+                                <li>Préparer le texte à trous ou la version audio&nbsp;: 2&nbsp;crédits chacun</li>
+                                <li>Préparer les cartes de révision&nbsp;: 1&nbsp;crédit</li>
+                                <li>Préparer la carte mentale&nbsp;: 3&nbsp;crédits (et autant pour la refaire ou faire vérifier vos modifications)</li>
                                 <li>Une série de Questionne-moi (5 questions)&nbsp;: 5&nbsp;crédits, toutes les corrections et relances comprises</li>
                               </ul>
-                              <p>Chaque exercice n’est préparé qu’une fois par cours. Chaque série de Questionne-moi est comptée, la première comme la dixième, car l’IA corrige à chaque fois des réponses nouvelles. Une série quittée avant sa première correction ne coûte rien, sauf la première d’un cours, comptée dès la préparation de ses questions.</p>
-                              <p>Avec 60&nbsp;crédits, vous pouvez par exemple lire 3 à 4&nbsp;cours et préparer tous leurs exercices hors Questionne-moi, carte mentale comprise (14 à 17&nbsp;crédits chacun), faire 12&nbsp;séries de Questionne-moi, ou lire 15&nbsp;nouveaux cours.</p>
-                              <p>Les crédits reviennent chaque nuit, à 1 h du matin en hiver et à 2 h en été (heure de Paris), et ne s’additionnent pas d’un jour à l’autre. Si une lecture, une préparation ou une série échoue, ses crédits sont rendus, et si la connexion coupe avant la fin, «&nbsp;Réessayer&nbsp;» ne vous fait pas payer une deuxième fois. L’application affiche à tout moment ceux qui vous restent, et le coût de chaque exercice avant de le lancer.</p>
+                              <p>Par exemple, un cours de 10&nbsp;pages, lu puis préparé en entier (QCM, texte à trous, cartes, audio et carte mentale), utilise 21&nbsp;crédits, et 26 avec une série de Questionne-moi.</p>
+                              <p>Si une lecture, une préparation ou une série échoue, ses crédits sont rendus, et si la connexion coupe avant la fin, «&nbsp;Réessayer&nbsp;» ne vous fait pas payer une deuxième fois. L’application affiche à tout moment vos crédits, et le coût de chaque exercice avant de le lancer.</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="faq-item">
+                          <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+                              Que sont Questionne Moi+ et les recharges&nbsp;?
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6"/>
+                              </svg>
+                            </button>
+                          </h3>
+                          <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8" hidden>
+                            <div class="faq-answer-inner">
+                              <p>Rien n’est obligatoire&nbsp;: on peut réviser avec les crédits offerts. Pour ceux qui veulent en faire plus, l’application propose&nbsp;:</p>
+                              <ul>
+                                <li><strong>Questionne Moi+</strong>, 5,99&nbsp;€ par mois (3,99&nbsp;€ le premier mois pour un premier abonnement)&nbsp;: 100&nbsp;crédits par mois en plus des crédits du jour, tous vos examens dans «&nbsp;Mon programme&nbsp;», et 20&nbsp;% de crédits en plus sur les recharges. Sans engagement.</li>
+                                <li>Le <strong>pass année scolaire</strong>, 49,99&nbsp;€ payés une fois&nbsp;: Questionne Moi+ pendant 10&nbsp;mois, sans renouvellement automatique.</li>
+                                <li>Des <strong>recharges</strong>&nbsp;: 40&nbsp;crédits pour 2,99&nbsp;€, 100&nbsp;crédits pour 6,99&nbsp;€. Elles n’expirent pas et servent après les crédits du jour.</li>
+                              </ul>
+                              <p>Les prix indiqués sont ceux de la France&nbsp;; l’application affiche toujours le prix exact avant l’achat. Les crédits du mois ne se reportent pas, et au plus 150&nbsp;crédits peuvent être utilisés par jour. Les paiements passent par Google Play. Le détail figure dans les <a href="cgu.html#offres">conditions générales</a>.</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="faq-item">
+                          <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+                              Comment résilier, ou être remboursé&nbsp;?
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6"/>
+                              </svg>
+                            </button>
+                          </h3>
+                          <div class="faq-answer" id="faq-a9" role="region" aria-labelledby="faq-q9" hidden>
+                            <div class="faq-answer-inner">
+                              <p><strong>Résilier Questionne Moi+</strong>&nbsp;: dans l’application, Profil, «&nbsp;Questionne Moi+ et recharges&nbsp;», puis «&nbsp;Gérer ou résilier dans Google Play&nbsp;». Ou dans le Play Store&nbsp;: icône du profil, «&nbsp;Paiements et abonnements&nbsp;», «&nbsp;Abonnements&nbsp;». Questionne Moi+ reste actif jusqu’à la fin du mois déjà payé.</p>
+                              <p><strong>Être remboursé</strong>&nbsp;: dans les 14&nbsp;jours qui suivent un achat, écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a> avec le numéro de commande Google Play (il commence par «&nbsp;GPA.&nbsp;»). Une recharge dont aucun crédit n’a été utilisé est remboursée en entier, Questionne Moi+ en proportion des crédits du mois non utilisés. Les règles complètes sont dans les <a href="cgu.html#retractation">conditions générales</a>.</p>
+                              <p>Attention&nbsp;: supprimer son compte n’arrête pas l’abonnement. Pensez à le résilier dans Google Play.</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article class="faq-item">
+                          <h3>
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">
+                              Je suis parent&nbsp;: que dois-je savoir&nbsp;?
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6"/>
+                              </svg>
+                            </button>
+                          </h3>
+                          <div class="faq-answer" id="faq-a10" role="region" aria-labelledby="faq-q10" hidden>
+                            <div class="faq-answer-inner">
+                              <p>Une <a href="parents.html">page pour les parents</a> explique ce que fait l’application, ce qu’elle garde, comment fonctionnent les achats et comment exiger votre accord avant chacun d’eux dans Google Play.</p>
                             </div>
                           </div>
                         </article>
