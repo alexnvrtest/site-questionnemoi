@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#072D42">
+    <meta name="robots" content="index,follow">
+    <title>Pour les parents | Questionne Moi</title>
+    <meta name="description" content="Ce que fait Questionne Moi, ce que l'application garde, comment fonctionnent les achats et comment exiger votre accord avant chacun d'eux.">
+    <link rel="canonical" href="https://www.questionnemoi.com/parents.html">
+    <link rel="icon" href="assets/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Questionne Moi">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="Pour les parents | Questionne Moi">
+    <meta property="og:description" content="Ce que fait Questionne Moi, ce que l'application garde, comment fonctionnent les achats et comment exiger votre accord avant chacun d'eux.">
+    <meta property="og:url" content="https://www.questionnemoi.com/parents.html">
+    <meta property="og:image" content="https://www.questionnemoi.com/assets/partage.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+
+:root {
+  --ink: #072D42;
+  --blue: #0B4F71;
+  --blue-deep: #083D58;
+  --gold: #F0B429;
+  --paper: #EAF1F5;
+  --white: #FFFFFF;
+  --muted: #3E5968;
+  --line: #C8D7E0;
+  --content: 72rem;
+  --reading: 48rem;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: var(--blue);
+  text-underline-offset: .18em;
+  text-decoration-thickness: .08em;
+}
+
+a:hover { color: var(--blue-deep); }
+
+a:focus-visible {
+  outline: .1875rem solid var(--white);
+  outline-offset: .1875rem;
+  box-shadow: 0 0 0 .375rem var(--blue);
+  border-radius: .35rem;
+}
+
+.skip-link {
+  position: fixed;
+  inset-inline-start: 1rem;
+  inset-block-start: 1rem;
+  z-index: 100;
+  padding: .7rem 1rem;
+  border-radius: .6rem;
+  color: var(--white);
+  background: var(--ink);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.container {
+  width: min(calc(100% - 2rem), var(--content));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: .0625rem solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.brand:hover { color: var(--ink); }
+
+.brand img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: .8rem;
+  object-fit: cover;
+}
+
+.brand-name { font-size: 1.08rem; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .4rem .1rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: .125rem solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--blue);
+  border-bottom-color: var(--gold);
+}
+
+.legal-shell {
+  padding-block: 3.5rem 5rem;
+}
+
+.legal-document {
+  width: min(100%, var(--reading));
+  margin-inline: auto;
+  padding: clamp(1.2rem, 4vw, 2.8rem);
+  background: var(--white);
+  border: .0625rem solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.legal-kicker {
+  margin: 0 0 .7rem;
+  color: var(--blue);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+h1 {
+  margin: 0 0 .9rem;
+  font-size: clamp(2.1rem, 6vw, 3.3rem);
+}
+
+h2 {
+  margin: 2.6rem 0 .8rem;
+  padding-top: .6rem;
+  border-top: .0625rem solid var(--line);
+  font-size: 1.55rem;
+}
+
+h3 {
+  margin: 1.6rem 0 .55rem;
+  font-size: 1.15rem;
+}
+
+p, ul { margin-top: 0; }
+
+ul { padding-left: 1.35rem; }
+
+li + li { margin-top: .45rem; }
+
+.lead {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.placeholder {
+  display: inline-block;
+  padding: .08rem .35rem;
+  border: .0625rem dashed #8EAAB9;
+  border-radius: .3rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  font-weight: 750;
+}
+
+.note {
+  padding: 1rem 1.1rem;
+  color: var(--ink);
+  background: #F5F9FB;
+  border-left: .22rem solid var(--gold);
+}
+
+.site-footer {
+  color: #EAF1F5;
+  background: var(--ink);
+  border-top: .1875rem solid var(--gold);
+}
+
+.footer-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+
+.footer-brand {
+  margin: 0 0 .35rem;
+  color: var(--white);
+  font-weight: 850;
+}
+
+.footer-meta {
+  margin: 0;
+  color: #DDE9EF;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.site-footer a:hover { color: var(--paper); }
+
+@media (min-width: 42rem) {
+  .container { width: min(calc(100% - 3rem), var(--content)); }
+
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+}
+
+@media print {
+  :root {
+    --paper: #FFFFFF;
+    --white: #FFFFFF;
+    --ink: #000000;
+    --muted: #222222;
+    --line: #B8B8B8;
+  }
+
+  body {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+  .skip-link,
+  .site-nav {
+    display: none;
+  }
+
+  .site-header {
+    border-bottom: .0625rem solid #B8B8B8;
+  }
+
+  .brand img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .legal-shell { padding-block: 1rem; }
+
+  .legal-document {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .site-footer {
+    margin-top: 2rem;
+    color: #000000;
+    background: #FFFFFF;
+    border-top: .125rem solid #000000;
+  }
+
+  .footer-brand,
+  .footer-meta,
+  .site-footer a {
+    color: #000000;
+  }
+
+  a { color: #000000; }
+
+  h2 {
+    break-after: avoid;
+    border-top-color: #666666;
+  }
+
+  p, li { orphans: 3; widows: 3; }
+}
+
+  </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Questionne Moi, accueil">
+          <img src="assets/logo.png" alt="Logo Questionne Moi, point d’interrogation doré sur fond bleu encre">
+          <span class="brand-name">Questionne Moi</span>
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <ul>
+            <li>
+              <a href="index.html">Accueil</a>
+            </li>
+            <li>
+              <a href="index.html#fonctionnement">Comment ça marche</a>
+            </li>
+            <li>
+              <a href="index.html#donnees">Vos données</a>
+            </li>
+            <li>
+              <a href="index.html#faq">Questions fréquentes</a>
+            </li>
+            <li>
+              <a href="parents.html" aria-current="page">Parents</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="contenu" class="legal-shell">
+      <article class="legal-document">
+        <p class="legal-kicker">Pour les parents</p>
+        <h1>Votre enfant révise avec Questionne Moi</h1>
+        <p class="lead">Ce que fait l’application, ce qu’elle garde, comment fonctionnent les achats, et comment exiger votre accord avant chacun d’eux.</p>
+        <div class="note">
+          <p><strong>En bref</strong></p>
+          <ul>
+            <li>Questionne Moi transforme les cours photographiés par votre enfant en exercices de révision.</li>
+            <li>Elle est réservée aux 15 ans et plus, ne montre aucune publicité et ne revend aucune donnée.</li>
+            <li>Elle est gratuite à télécharger ; des achats sont possibles mais jamais nécessaires pour réviser ce qui est déjà prêt.</li>
+            <li>Les paiements passent par Google Play, qui peut exiger votre accord avant chaque achat.</li>
+          </ul>
+        </div>
+
+        <h2>1. Ce que fait l’application</h2>
+        <p>Votre enfant photographie ses notes ou ses documents de cours. L’application en lit le texte, puis en tire des exercices sur ce contenu précis : QCM, questions ouvertes corrigées, texte à trous, cartes de révision, version audio à réécouter, carte mentale et plan de révision avant un examen.</p>
+        <p>Ces exercices sont fabriqués automatiquement par une intelligence artificielle. Ils peuvent comporter des erreurs : l’application signale ce qui ne vient pas du cours (« Pas dans ton cours »), et la « note IA » des réponses écrites est une estimation, pas une note officielle. Questionne Moi ne remplace ni le cours, ni l’enseignant.</p>
+
+        <h2>2. À partir de 15 ans</h2>
+        <p>L’application demande la date de naissance à l’inscription et refuse les moins de 15 ans. La date n’est pas gardée : seul le fait que la condition d’âge est remplie est enregistré.</p>
+
+        <h2>3. Ce que l’application garde</h2>
+        <ul>
+          <li><strong>L’adresse mail</strong>, pour se connecter avec un code reçu par mail, sans mot de passe, et un pseudo facultatif.</li>
+          <li><strong>Le texte des cours, les exercices et les résultats</strong>, sur le téléphone et sur le compte, hébergé dans l’Union européenne (Irlande), pour les retrouver sur un autre téléphone.</li>
+          <li><strong>Les photos ne sont jamais gardées</strong> : elles sont effacées du téléphone dès que leur lecture a réussi.</li>
+          <li><strong>Les achats</strong> : le produit, la date et le numéro de commande. Questionne Moi ne voit jamais la carte bancaire ni le moyen de paiement.</li>
+        </ul>
+        <p>Le compte et toutes ses données peuvent être supprimés à tout moment depuis l’application (Profil, « Supprimer mon compte »). Le détail est dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+
+        <h2>4. Gratuit, avec des achats facultatifs</h2>
+        <p>Les fonctions où l’intelligence artificielle travaille (lire les photos, préparer les exercices, corriger les réponses) utilisent des <strong>crédits</strong>. Chaque compte reçoit 30 crédits à l’arrivée, puis 3 crédits par jour. Refaire des exercices déjà prêts est toujours gratuit.</p>
+        <p>Pour ceux qui veulent en faire plus, l’application propose, aux prix affichés en France :</p>
+        <ul>
+          <li><strong>Questionne Moi+</strong>, abonnement à 5,99 € par mois (3,99 € le premier mois pour un premier abonnement), sans engagement : 100 crédits par mois et tous les examens dans le plan de révision ;</li>
+          <li>le <strong>pass année scolaire</strong>, 49,99 € payés une fois, pour 10 mois de Questionne Moi+, sans renouvellement automatique ;</li>
+          <li>des <strong>recharges</strong> de crédits : 2,99 € les 40 crédits, 6,99 € les 100 crédits.</li>
+        </ul>
+        <p>Les offres ne sont présentées que dans le profil, dans l’explication des crédits et lorsqu’il manque des crédits pour une action, sans compte à rebours ni relance. L’écran des offres invite les moins de 18 ans à en parler d’abord à un parent. Au plus 150 crédits peuvent être utilisés par jour, même avec des achats.</p>
+
+        <h2 id="accord">5. Exiger votre accord avant chaque achat</h2>
+        <p>Les achats passent par <strong>Google Play</strong>, avec le moyen de paiement enregistré sur le compte Google du téléphone. Plusieurs réglages de Google permettent de garder la main. Les intitulés peuvent varier légèrement selon la version d’Android.</p>
+        <h3>Si votre enfant paie avec votre moyen de paiement familial</h3>
+        <p>Dans un <strong>groupe familial Google</strong> avec un mode de paiement familial, le gestionnaire de la famille peut demander à approuver les achats des membres de moins de 18 ans : application Play Store, icône du profil, « Paramètres », « Famille », « Gérer les membres de la famille », choisir votre enfant, puis « Approbation des achats ».</p>
+        <h3>Si le compte de votre enfant est supervisé avec Family Link</h3>
+        <p>Dans l’application <strong>Family Link</strong> : choisissez votre enfant, puis « Contrôles », « Restrictions de contenu », « Google Play », et réglez l’approbation des achats sur « Tout le contenu » ou « Uniquement les achats via une application ». Chaque achat vous est alors demandé sur votre propre téléphone. À partir de 15 ans, cette supervision se fait avec l’accord de l’adolescent.</p>
+        <h3>Dans tous les cas</h3>
+        <p>Sur le téléphone de votre enfant, dans l’application Play Store : icône du profil, « Paramètres », « Authentification », « Exiger l’authentification pour les achats », puis « Pour tous les achats effectués via Google Play sur cet appareil ». Le mot de passe du compte Google ou l’empreinte est alors demandé à chaque achat. Si vous préférez fixer un budget, une carte cadeau Google Play, sans carte bancaire enregistrée, limite les achats à son montant.</p>
+
+        <h2>6. Résilier ou être remboursé</h2>
+        <p><strong>Résilier Questionne Moi+</strong> : dans l’application, Profil, « Questionne Moi+ et recharges », puis « Gérer ou résilier dans Google Play » ; ou dans le Play Store, icône du profil, « Paiements et abonnements », « Abonnements ». L’abonnement reste actif jusqu’à la fin du mois payé, puis s’arrête. Supprimer le compte Questionne Moi ne résilie pas l’abonnement.</p>
+        <p><strong>Être remboursé</strong> : dans les 14 jours qui suivent un achat, écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a> en indiquant le numéro de commande Google Play (il commence par « GPA. » et figure sur le reçu de Google). Une recharge dont aucun crédit n’a été utilisé est remboursée en entier, Questionne Moi+ en proportion des crédits du mois non utilisés. Google Play permet aussi, en général dans les 48 heures, de lui demander directement un remboursement depuis l’historique des commandes.</p>
+        <p>Si vous découvrez un achat fait sans votre accord, écrivez-nous avec ce numéro de commande : nous regarderons avec vous ce qui est possible. Les règles complètes figurent dans les <a href="cgu.html#retractation">conditions générales d’utilisation et de vente</a>.</p>
+
+        <h2>7. Une question ?</h2>
+        <p>Écrivez à <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>. Questionne Moi est édité par Claire Papetti, entreprise individuelle, 26 avenue de Flirey, bâtiment Les Jasmins, 06000 Nice.</p>
+      </article>
+    </main>
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <p class="footer-brand">Questionne Moi</p>
+            <p class="footer-meta">Édité par Claire Papetti, entreprise individuelle, RCS Nice 889 981 213</p>
+            <p class="footer-meta">
+              <a href="mailto:contactquestionnemoi@gmail.com">contactquestionnemoi@gmail.com</a>
+            </p>
+          </div>
+          <nav aria-label="Liens juridiques">
+            <ul class="footer-links">
+              <li>
+                <a href="mentions-legales.html">Mentions légales</a>
+              </li>
+              <li>
+                <a href="confidentialite.html">Confidentialité</a>
+              </li>
+              <li>
+                <a href="cgu.html">CGU</a>
+              </li>
+              <li>
+                <a href="suppression-compte.html">Supprimer son compte</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </body>
+  </html>

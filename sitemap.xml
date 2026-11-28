@@ -20,4 +20,8 @@
     <loc>https://www.questionnemoi.com/suppression-compte.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.questionnemoi.com/parents.html</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>
